@@ -4,29 +4,32 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
-  const solutions = [
-    { name: 'Free Online Reputation Report', href: '/free-reputation-report' },
-    { name: 'Reputation Management', href: '/reputation-management' },
-    { name: 'AI Employee Systems', href: '/ai-employee-systems' },
-    { name: 'Website Chatbot', href: '/website-chatbot' },
-    { name: 'AI Follow-Up', href: '/ai-follow-up' },
-    { name: 'Social Media Planner', href: '/social-media-planner' },
-    { name: 'Listings Management', href: '/listings-management' },
-  ];
-
   const company = [
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Blog', href: '#' },
+    { name: 'Careers', href: '#' },
+  ];
+
+  const services = [
+    { name: 'Review Management', href: '/services/review-management' },
+    { name: 'Messaging & Communication', href: '/services/messaging' },
+    { name: 'Webchat Solutions', href: '/services/webchat' },
+    { name: 'CRM & Lead Management', href: '/services/crm' },
+    { name: 'AI Marketing Automation', href: '/services/ai-marketing' },
   ];
 
   const resources = [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Help Center', href: '/help' },
-    { name: 'Industry Guides', href: '/guides' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Book a Demo', href: '/demo' },
+    { name: 'Help Center', href: '#' },
+    { name: 'System Status', href: '#' },
+  ];
+
+  const legal = [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'Cookie Policy', href: '/privacy' },
   ];
 
   return (
@@ -45,11 +48,11 @@ const Footer = () => {
 
         {/* 4 Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Column 1: Solutions */}
+          {/* Column 1: Company */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Solutions</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              {solutions.map((item) => (
+              {company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -62,11 +65,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 2: Company */}
+          {/* Column 2: Services */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
-              {company.map((item) => (
+              {services.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -96,32 +99,37 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
+          {/* Column 4: Legal */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <Phone className="h-5 w-5 mr-2 mt-0.5 text-accent flex-shrink-0" />
-                <a href="tel:+14133142553" className="hover:text-accent transition-colors text-sm">
-                  (413) 314-2553
-                </a>
-              </li>
-              <li className="flex items-start">
-                <Mail className="h-5 w-5 mr-2 mt-0.5 text-accent flex-shrink-0" />
-                <a href="mailto:info@reputation-genius.com" className="hover:text-accent transition-colors text-sm">
-                  info@reputation-genius.com
-                </a>
-              </li>
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-sm">
-                  Phoenix, Arizona
-                </span>
-              </li>
+            <h3 className="text-white font-semibold text-lg mb-4">Legal</h3>
+            <ul className="space-y-2">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-accent transition-colors text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+        </div>
 
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8 mt-8">
+          <div className="text-center mb-6">
+            <p className="text-sm text-gray-400 mb-2">
+              Copyright Reputation Genius, LLC 2025 — All Rights Reserved
+            </p>
+            <p className="text-sm text-gray-300 italic">
+              We're on a mission to build a better future where technology reviews good jobs for everyone.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Social Media Icons */}
-            <div className="flex space-x-4 mt-6">
+            <div className="flex space-x-4">
               <a href="#" className="hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
@@ -135,25 +143,9 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
-              © 2025 Reputation Genius. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="hover:text-accent transition-colors">
-                Privacy
-              </Link>
-              <Link href="/terms" className="hover:text-accent transition-colors">
-                Terms
-              </Link>
-              <Link href="/sitemap" className="hover:text-accent transition-colors">
-                Sitemap
-              </Link>
+            {/* Integration Logos */}
+            <div className="text-sm text-gray-400">
+              Integrates with: Clio, Google, Zapier, Facebook Messenger, Quickbooks
             </div>
           </div>
         </div>
