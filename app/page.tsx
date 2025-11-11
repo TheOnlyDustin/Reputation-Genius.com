@@ -103,24 +103,24 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white">
+      <section className="bg-white">
         <div className="section-container py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Never Lose Another Lead Again
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-text-primary">
+                AI-Powered Reputation Management for Service Businesses
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-blue-100">
-                AI-powered reputation management and customer engagement for service businesses. 
-                Capture every opportunity, automate follow-ups, and dominate local search.
+              <p className="text-xl md:text-2xl mb-8 text-text-secondary">
+                Monitor reviews across 50+ platforms, automate customer engagement, and dominate local search.
+                Trusted by thousands of service businesses nationwide.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/free-reputation-report" className="btn-cta">
                   Get Your Free Report
                 </Link>
-                <a 
-                  href="tel:+14133142553" 
-                  className="bg-white hover:bg-gray-100 text-primary font-semibold px-8 py-4 rounded-md text-lg transition-colors shadow-lg text-center"
+                <a
+                  href="tel:+14133142553"
+                  className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-md text-lg transition-colors shadow-lg text-center"
                 >
                   Call AI Demo: (413) 314-2553
                 </a>
@@ -129,11 +129,28 @@ export default function Home() {
             <div className="hidden lg:block">
               <Image
                 src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a9038a6c0e130deda2c867.png"
-                alt="Reputation Genius"
+                alt="Reputation Genius Dashboard"
                 width={500}
                 height={300}
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg shadow-xl"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Integrations Section */}
+      <section className="bg-background-alt py-12">
+        <div className="section-container !py-12">
+          <div className="text-center mb-8">
+            <p className="text-text-secondary font-medium mb-4">Trusted by reviews from</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="text-2xl font-bold text-gray-400">Google</div>
+              <div className="text-2xl font-bold text-gray-400">Yelp</div>
+              <div className="text-2xl font-bold text-gray-400">Facebook</div>
+              <div className="text-2xl font-bold text-gray-400">Angie's List</div>
+              <div className="text-2xl font-bold text-gray-400">BBB</div>
+              <div className="text-2xl font-bold text-gray-400">+45 More</div>
             </div>
           </div>
         </div>
@@ -157,14 +174,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview Section */}
+      {/* Features Section */}
       <section className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Complete AI-Powered Solutions for Local Businesses
+            Everything You Need to Dominate Local Search
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Everything you need to manage your reputation, capture leads, and grow your service business.
+            Comprehensive reputation management and customer engagement tools designed for service businesses.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -224,13 +241,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-container">
+      <section className="bg-background-alt section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What Our Clients Say
+            Trusted by Service Businesses Nationwide
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Real results from real service businesses
+            See how Reputation Genius transforms local businesses
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -258,17 +275,17 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-gradient-to-r from-primary to-primary-dark text-white section-container">
+      <section className="bg-primary text-white section-container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Online Reputation?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Get your free comprehensive reputation report and discover exactly how to capture more leads, 
+            Get your free comprehensive reputation report and discover exactly how to capture more leads,
             improve your rankings, and dominate your local market.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/free-reputation-report" className="btn-cta !bg-accent !hover:bg-accent-dark">
+            <Link href="/free-reputation-report" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
               Get Your Free Report Now
             </Link>
             <p className="text-blue-100">

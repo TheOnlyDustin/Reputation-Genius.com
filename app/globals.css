@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --primary: #2563eb;
-    --primary-dark: #1e40af;
-    --primary-light: #60a5fa;
-    --accent: #10b981;
-    --accent-dark: #059669;
+    --primary: #0066cc;
+    --primary-dark: #0052a3;
+    --primary-light: #338fff;
+    --accent: #475569;
+    --accent-dark: #334155;
   }
   
   body {
