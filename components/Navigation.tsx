@@ -43,11 +43,13 @@ const Navigation = () => {
             </Link>
 
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div
+              className="relative group"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <button
                 className="flex items-center text-text-secondary hover:text-primary font-medium transition-colors"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
               >
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -55,8 +57,6 @@ const Navigation = () => {
               {servicesOpen && (
                 <div
                   className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border py-2"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
                 >
                   {services.map((item) => (
                     <Link
