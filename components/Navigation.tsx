@@ -56,7 +56,9 @@ const Navigation = () => {
               </button>
               {servicesOpen && (
                 <div
-                  className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border py-2"
+                  className="absolute left-0 top-full w-64 bg-white rounded-lg shadow-xl border border-border py-2"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
                 >
                   {services.map((item) => (
                     <Link
