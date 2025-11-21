@@ -185,14 +185,16 @@ export default function Home() {
             </div>
             <div className="relative hidden lg:block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <Image
-                src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a9038a6c0e130deda2c867.png"
-                alt="Reputation Genius Dashboard"
-                width={600}
-                height={400}
-                className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 transform hover:scale-[1.02] transition-transform duration-500"
-                priority
-              />
+              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/677859c851e7485209666846.png"
+                >
+                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/677859c851e7485209666846.png"
+              src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a9038a6c0e130deda2c867.png"
               alt="Reputation Genius"
               width={180}
               height={50}
