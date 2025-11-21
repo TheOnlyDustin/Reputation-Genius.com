@@ -88,7 +88,8 @@ export default function ReviewManagementPage() {
         'Auto-Request Reviews',
         'Respond To Reviews In One Place',
         'Review Sharing On Social Sites'
-      ]
+      ],
+      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f'
     },
     {
       name: 'Professional',
@@ -101,7 +102,8 @@ export default function ReviewManagementPage() {
         'Advanced Analytics & Reporting',
         'Priority Review Response Alerts',
         'Custom Review Request Templates'
-      ]
+      ],
+      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996'
     },
     {
       name: 'Platinum',
@@ -113,7 +115,8 @@ export default function ReviewManagementPage() {
         'AI-Powered Review Insights',
         'Automated Review Translation',
         'Competitor Review Monitoring'
-      ]
+      ],
+      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936'
     }
   ];
 
@@ -220,7 +223,7 @@ export default function ReviewManagementPage() {
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {pricingTiers.map((tier, index) => (
-            <div key={index} className={`card relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
+            <div key={index} className={`card flex flex-col h-full relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
               {tier.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                   {tier.badge}
@@ -233,7 +236,7 @@ export default function ReviewManagementPage() {
                 </div>
                 <p className="text-sm text-text-secondary">{tier.tagline}</p>
               </div>
-              <div className="mb-8">
+              <div className="mb-8 flex-grow">
                 <h4 className="font-semibold text-text-primary mb-4">Review Management Features:</h4>
                 <ul className="space-y-3">
                   {tier.reviewFeatures.map((feature, featureIndex) => (
@@ -244,10 +247,15 @@ export default function ReviewManagementPage() {
                   ))}
                 </ul>
               </div>
-              <div className="text-center">
-                <Link href="/pricing" className="btn-cta w-full text-center block">
+              <div className="text-center mt-auto">
+                <a
+                  href={tier.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta w-full text-center block"
+                >
                   Get Started
-                </Link>
+                </a>
               </div>
             </div>
           ))}

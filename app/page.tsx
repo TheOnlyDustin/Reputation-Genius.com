@@ -404,7 +404,7 @@ export default function Home() {
               Book a Demo
             </a>
             <a
-              href="https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b"
+              href="https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f"
               className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300"
               target="_blank"
               rel="noopener noreferrer"
