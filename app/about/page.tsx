@@ -84,8 +84,9 @@ export default function AboutPage() {
     {
       name: "Jessica",
       role: "AI Phone and SMS Agent / Receptionist",
-      bio: "Our AI agent who guides customers through the Demo, showcasing how an AI agent could help in your business.",
-      image: "/api/placeholder/150/150"
+      bio: "Jessica is Reputation Genius's AI-powered phone and SMS agent, designed to handle customer inquiries, qualify leads, and provide instant support 24/7. From her first interaction, Jessica was programmed to understand natural conversation, empathize with customers, and guide them through complex business processes—like booking appointments or answering common questions—with remarkable accuracy. She never sleeps, never takes a break, and ensures no call or message goes unanswered. At the heart of our AI employee platform, Jessica demonstrates how intelligent automation can transform customer service, turning every interaction into an opportunity to impress and convert. She's not just answering questions; she's building relationships and driving business results around the clock.",
+      image: "/api/placeholder/150/150",
+      phone: "tel:+14133142553"
     }
   ];
 
@@ -254,6 +255,14 @@ export default function AboutPage() {
               <p className="text-sm text-text-secondary">
                 {member.bio}
               </p>
+              {member.phone && (
+                <a
+                  href={member.phone}
+                  className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
+                >
+                  Try Her Now
+                </a>
+              )}
             </div>
           ))}
         </div>
