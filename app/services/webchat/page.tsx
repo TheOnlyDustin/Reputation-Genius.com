@@ -130,8 +130,18 @@ export default function WebchatPage() {
             Experience how our webchat widget engages visitors and drives conversions in real-time.
           </p>
         </div>
-        <div className="flex justify-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <WebchatDemo />
+          <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6dbb78b2801822bc32447.jpeg"
+            >
+              <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 

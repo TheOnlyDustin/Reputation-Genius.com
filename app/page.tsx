@@ -194,7 +194,7 @@ export default function Home() {
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/677859c851e7485209666846.png"
+                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
                 >
                   <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
