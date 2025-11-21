@@ -165,9 +165,14 @@ export default function Home() {
                 Automate your reputation, dominate local search, and turn every customer interaction into a 5-star opportunity with AI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link href="/demo" className="btn-cta">
+                <a
+                  href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta"
+                >
                   Book a Demo
-                </Link>
+                </a>
                 <Link href="/pricing" className="btn-secondary">
                   View Pricing
                 </Link>
@@ -390,9 +395,14 @@ export default function Home() {
             Join hundreds of businesses protecting their brand and growing their revenue with Reputation Genius.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="/demo" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <a
+              href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+            >
               Book a Demo
-            </Link>
+            </a>
             <a
               href="https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b"
               className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300"

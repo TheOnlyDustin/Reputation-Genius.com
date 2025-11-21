@@ -144,145 +144,33 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="card">
-              <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6">Ready to see how an AI Employee can work in your business—today?</h2>
 
-              {isSubmitted ? (
-                <div className="text-center py-8">
-                  <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
-                  <p className="text-text-secondary mb-6">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="btn-primary"
-                  >
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.name ? 'border-red-500' : 'border-gray-300'
-                          }`}
-                        placeholder="Your full name"
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-                      )}
-                    </div>
+              <div className="prose prose-lg text-text-secondary mb-8">
+                <p className="mb-4">
+                  This 30–45 minute call is for business owners and teams who want to explore real implementation of AI in their business. You’ll meet with a reputation specialist to map your use cases, review best-fit workflows, and outline a fast path to launch.
+                </p>
 
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'
-                          }`}
-                        placeholder="your.email@example.com"
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-                      )}
-                    </div>
-                  </div>
+                <h3 className="text-xl font-semibold text-text-primary mb-3">What we’ll cover</h3>
+                <ul className="list-disc pl-5 space-y-2 mb-6">
+                  <li>Your goals, call volume, and lead flow</li>
+                  <li>How the AI Employee answers, qualifies, and books on your behalf</li>
+                  <li>Integration options (phone numbers, calendars, CRM, pipelines)</li>
+                  <li>Knowledge Base setup for your niche (we have prebuilt FAQs for 12+ industries)</li>
+                  <li>Pricing, timeline, and rollout plan</li>
+                </ul>
+              </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-text-primary mb-2">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="(555) 123-4567"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-text-primary mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.message ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                      placeholder="Tell us about your business and how we can help..."
-                    />
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-                    )}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-cta w-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-5 w-5 mr-2" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
-
-            {/* Alternative CTA */}
-            <div className="mt-8 text-center">
-              <p className="text-text-secondary mb-4">
-                Prefer to talk? Book a personalized demo call instead.
-              </p>
-              <Link href="/demo" className="btn-primary inline-flex items-center">
-                Book a Demo Instead
-                <Send className="ml-2 h-4 w-4" />
-              </Link>
+              <div className="w-full h-[800px] border-none overflow-hidden">
+                <iframe
+                  src="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+                  style={{ width: '100%', height: '100%', border: 'none', overflow: 'hidden' }}
+                  scrolling="no"
+                  id="rFzMVQiEGHyQG6Q9jIJK_1763711799835"
+                  title="Book a Call"
+                ></iframe>
+                <script src="https://link.reputation-genius.com/js/form_embed.js" type="text/javascript"></script>
+              </div>
             </div>
           </div>
 

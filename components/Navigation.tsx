@@ -93,12 +93,14 @@ const Navigation = () => {
             </Link>
 
             {/* CTA Button */}
-            <Link
-              href="/demo"
+            <a
+              href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-cta !px-6 !py-2.5 !text-base !bg-primary-gradient hover:!shadow-glow"
             >
               Book a Demo
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}

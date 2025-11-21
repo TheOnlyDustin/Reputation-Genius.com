@@ -78,18 +78,24 @@ export default function DemoPage() {
         </div>
       </section>
 
-      {/* Booking Form Section */}
+      {/* Booking Link Section */}
       <section className="bg-white">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 h-[800px]">
-              <iframe
-                src="https://link.reputation-genius.com/widget/booking/jBgO8Co4QAp0N8m1PW0i"
-                style={{ width: '100%', height: '100%', border: 'none' }}
-                scrolling="auto"
-                id="discovery_call_iframe"
-                title="Schedule a Demo"
-              ></iframe>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-border">
+              <h2 className="text-3xl font-bold mb-6">Ready to Schedule?</h2>
+              <p className="text-xl text-text-secondary mb-8">
+                Book a time directly on our calendar to speak with a reputation specialist.
+              </p>
+              <a
+                href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta text-lg px-8 py-4 inline-flex items-center"
+              >
+                Book Your Demo Now
+                <Clock className="ml-2 h-5 w-5" />
+              </a>
             </div>
 
             {/* Alternative CTA */}
