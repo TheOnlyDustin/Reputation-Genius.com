@@ -19,113 +19,53 @@ export default function PricingPage() {
       name: 'Essentials',
       price: '$97',
       period: '/month',
-      tagline: 'for emerging businesses just getting started',
+      tagline: 'For emerging businesses',
       features: [
-        {
-          category: 'Reviews',
-          items: [
-            'Get New Reviews Automatically',
-            'Auto-Request Reviews',
-            'Respond To Reviews In One Place',
-            'Review Sharing On Social Sites'
-          ]
-        },
-        {
-          category: 'Messaging',
-          items: [
-            'Full unified inbox'
-          ]
-        },
-        {
-          category: 'Webchat',
-          items: [
-            'Webchat'
-          ]
-        },
-        {
-          category: 'Auto Missed Call Text Back',
-          items: [
-            'Auto Missed Call Text Back'
-          ]
-        },
-        {
-          category: 'CRM',
-          items: [
-            'Grow audience',
-            'Import/Export',
-            'UNLIMITED Leads/Contacts'
-          ]
-        },
-        {
-          category: 'Payments',
-          items: [
-            'Easy Text 2 Pay Client Invoicing'
-          ]
-        },
-        {
-          category: 'Team',
-          items: [
-            'Up to 3 Team Members'
-          ]
-        }
+        'Automated Review Collection',
+        'Unified Messaging Inbox',
+        'Webchat Widget',
+        'CRM with Unlimited Leads',
+        'Text-to-Pay Invoicing',
+        'Up to 3 Team Members'
       ],
-      cta: 'START NOW',
+      cta: 'Start Free Trial',
       link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f',
-      trial: 'Free 14-Day Trial'
+      highlight: false
     },
     {
       name: 'Professional',
       price: '$297',
       period: '/month',
-      tagline: 'for established businesses looking to grow',
+      tagline: 'For growing businesses',
       badge: 'MOST POPULAR',
       features: [
-        {
-          category: 'All Essentials features',
-          items: [
-            'All Essentials features'
-          ]
-        },
-        {
-          category: 'Listings',
-          items: [
-            'Manage, update, and track info for multiple locations with the ease of a single dashboard'
-          ]
-        },
-        {
-          category: 'Team',
-          items: [
-            'UNLIMITED Team Members'
-          ]
-        }
+        'All Essentials features',
+        'Multi-Location Management',
+        'Unlimited Team Members',
+        'Advanced Analytics',
+        'Priority Support',
+        'Custom Integrations'
       ],
-      cta: 'START NOW',
+      cta: 'Start Free Trial',
       link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996',
-      trial: 'Free 14-Day Trial'
+      highlight: true
     },
     {
       name: 'Platinum',
       price: '$497',
       period: '/month',
-      tagline: 'for emerging businesses just getting started',
+      tagline: 'For scaling businesses',
       features: [
-        {
-          category: 'All Professional features',
-          items: [
-            'All Professional features'
-          ]
-        },
-        {
-          category: 'AI Marketing Automation',
-          items: [
-            'Never Lose Another Lead Or Customer Again',
-            'Reduce cost with AI follow up for all contacts'
-          ]
-        }
+        'All Professional features',
+        'AI Marketing Automation',
+        'Advanced Lead Nurturing',
+        'Custom AI Training',
+        'White-label Solutions',
+        'Dedicated Account Manager'
       ],
-      cta: 'START NOW',
+      cta: 'Start Free Trial',
       link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936',
-      trial: 'Free 14-Day Trial'
+      highlight: false
     }
   ];
 
@@ -247,51 +187,68 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Tiers Section */}
-      <section className="bg-background-alt section-container !py-12">
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {pricingTiers.map((tier, index) => (
-            <div key={index} className={`card relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
-              {tier.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                  {tier.badge}
-                </div>
-              )}
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <div className="text-4xl font-bold text-primary mb-1">
-                  {tier.price}<span className="text-lg font-normal text-text-secondary">{tier.period}</span>
-                </div>
-                <p className="text-sm text-text-secondary">{tier.tagline}</p>
-              </div>
-              <div className="space-y-4 mb-8">
-                {tier.features.map((featureGroup, groupIndex) => (
-                  <div key={groupIndex}>
-                    <h4 className="font-semibold text-text-primary mb-2">{featureGroup.category}</h4>
-                    <ul className="space-y-2">
-                      {featureGroup.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+      {/* Pricing Overview Section */}
+      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 mx-4 lg:mx-8 !py-24">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+              Choose the plan that fits your growth stage. No hidden fees.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+            {pricingTiers.map((tier, index) => (
+              <div
+                key={index}
+                className={`relative rounded-2xl p-8 transition-all duration-300 ${tier.highlight
+                  ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
+                  : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
+                  }`}
+              >
+                {tier.highlight && (
+                  <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg tracking-wide">
+                    {tier.badge}
                   </div>
-                ))}
+                )}
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                    <span className={`text-4xl font-bold ${tier.highlight ? 'text-primary' : 'text-white'}`}>{tier.price}</span>
+                    <span className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.period}</span>
+                  </div>
+                  <p className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.tagline}</p>
+                </div>
+                <ul className="space-y-4 mb-8">
+                  {tier.features.map((feature, i) => (
+                    <li key={i} className="flex items-start">
+                      <CheckCircle className={`h-5 w-5 mr-3 mt-0.5 flex-shrink-0 ${tier.highlight ? 'text-primary' : 'text-secondary'}`} />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="text-center">
+                  <a
+                    href={tier.link}
+                    className={`w-full block py-4 rounded-xl font-bold transition-all duration-300 ${tier.highlight
+                      ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
+                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
+                      }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {tier.cta}
+                  </a>
+                  <p className={`text-xs mt-3 ${tier.highlight ? 'text-text-secondary' : 'text-neutral-500'}`}>14-Day Free Trial Included</p>
+                </div>
               </div>
-              <div className="text-center space-y-3">
-                <a
-                  href={tier.link}
-                  className="btn-cta w-full text-center block"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {tier.cta}
-                </a>
-                <p className="text-sm text-text-secondary">{tier.trial}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
