@@ -298,7 +298,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Overview Section */}
-      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 mx-4 lg:mx-8 !py-24">
+      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 !py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
 

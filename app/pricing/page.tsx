@@ -76,11 +76,11 @@ export default function PricingPage() {
   const faqs = [
     {
       question: 'What is included in the free 14-day trial?',
-      answer: 'Our free trial gives you full access to all features of your chosen plan. You can connect your accounts, set up automations, and start managing your reputation immediately. No credit card required to start.'
+      answer: 'Our free trial gives you full access to all features of your chosen plan. You can connect your accounts, set up automations, and start managing your reputation immediately.'
     },
     {
       question: 'Can I change my plan at any time?',
-      answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we\'ll prorate any billing adjustments.'
+      answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will reflect on the next billing cycle.'
     },
     {
       question: 'What payment methods do you accept?',
@@ -100,7 +100,7 @@ export default function PricingPage() {
     },
     {
       question: 'How does the team member limit work?',
-      answer: 'The Essentials plan allows up to 3 team members. Professional and Platinum plans have unlimited team members. Each team member gets their own login and can be assigned specific permissions.'
+      answer: 'The Essentials plan allows up to 3 team members. Professional and Platinum plans have unlimited team members. Each team member adds their own calendar and email for bookings and communications, so this limit ensures effective system usage.'
     },
     {
       question: 'What integrations are available?',
@@ -155,14 +155,14 @@ export default function PricingPage() {
     {
       category: 'Listings',
       features: [
-        { name: 'Multi-Location Management', essentials: false, professional: true, platinum: true }
+        { name: 'Complete & Unified Online Presence', essentials: false, professional: true, platinum: true }
       ]
     },
     {
       category: 'AI Features',
       features: [
         { name: 'AI Marketing Automation', essentials: false, professional: false, platinum: true },
-        { name: 'AI Lead Follow-up', essentials: false, professional: false, platinum: true }
+        { name: 'AI Lead Follow-up', essentials: false, professional: true, platinum: true }
       ]
     }
   ];
@@ -188,7 +188,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Overview Section */}
-      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 mx-4 lg:mx-8 !py-24">
+      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 !py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
 
