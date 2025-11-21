@@ -24,12 +24,12 @@ export default function ContactPage() {
     message: ''
   });
 
-  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateForm = () => {
-    const newErrors: {[key: string]: string} = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
@@ -100,14 +100,14 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-6 w-6 text-accent" />,
       label: 'Email',
-      value: 'hello@reputation-genius.com',
-      href: 'mailto:hello@reputation-genius.com'
+      value: 'contact@reputation-genius.com',
+      href: 'mailto:contact@reputation-genius.com'
     },
     {
       icon: <Phone className="h-6 w-6 text-accent" />,
       label: 'Phone',
-      value: '(555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '1-413-798-8836',
+      href: 'tel:14137988836'
     },
     {
       icon: <Clock className="h-6 w-6 text-accent" />,
@@ -173,9 +173,8 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
-                          errors.name ? 'border-red-500' : 'border-gray-300'
-                        }`}
+                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.name ? 'border-red-500' : 'border-gray-300'
+                          }`}
                         placeholder="Your full name"
                       />
                       {errors.name && (
@@ -193,9 +192,8 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
-                          errors.email ? 'border-red-500' : 'border-gray-300'
-                        }`}
+                        className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'
+                          }`}
                         placeholder="your.email@example.com"
                       />
                       {errors.email && (
@@ -246,9 +244,8 @@ export default function ContactPage() {
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${
-                        errors.message ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Tell us about your business and how we can help..."
                     />
                     {errors.message && (

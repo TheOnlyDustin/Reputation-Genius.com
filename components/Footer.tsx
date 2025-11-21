@@ -33,30 +33,40 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-neutral-900 text-neutral-300 border-t border-neutral-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Logo */}
-        <div className="mb-8">
-          <Image
-            src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a9038e4325e13c49599a50.png"
-            alt="Reputation Genius"
-            width={200}
-            height={60}
-            className="h-10 w-auto"
-          />
+        <div className="mb-12">
+          <Link href="/" className="inline-block mb-6">
+            <Image
+              src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a9038e4325e13c49599a50.png"
+              alt="Reputation Genius"
+              width={200}
+              height={60}
+              className="h-10 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+            />
+          </Link>
+          <div className="flex items-center text-neutral-400 hover:text-secondary transition-colors mb-2">
+            <Phone className="h-4 w-4 mr-2" />
+            <a href="tel:14137988836" className="text-sm">1-413-798-8836</a>
+          </div>
+          <div className="flex items-center text-neutral-400 hover:text-secondary transition-colors">
+            <Mail className="h-4 w-4 mr-2" />
+            <a href="mailto:contact@reputation-genius.com" className="text-sm">contact@reputation-genius.com</a>
+          </div>
         </div>
 
         {/* 4 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Column 1: Company */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-heading font-semibold text-lg mb-6">Company</h3>
+            <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="hover:text-accent transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -67,13 +77,13 @@ const Footer = () => {
 
           {/* Column 2: Services */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-heading font-semibold text-lg mb-6">Services</h3>
+            <ul className="space-y-3">
               {services.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="hover:text-accent transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -84,13 +94,13 @@ const Footer = () => {
 
           {/* Column 3: Resources */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Resources</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-heading font-semibold text-lg mb-6">Resources</h3>
+            <ul className="space-y-3">
               {resources.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="hover:text-accent transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -101,13 +111,13 @@ const Footer = () => {
 
           {/* Column 4: Legal */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Legal</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-heading font-semibold text-lg mb-6">Legal</h3>
+            <ul className="space-y-3">
               {legal.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="hover:text-accent transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -118,34 +128,37 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
-          <div className="text-center mb-6">
-            <p className="text-sm text-gray-400 mb-2">
-              Copyright Reputation Genius, LLC 2025 — All Rights Reserved
-            </p>
-            <p className="text-sm text-gray-300 italic">
-              We're on a mission to build a better future where technology reviews good jobs for everyone.
-            </p>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Social Media Icons */}
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
+        <div className="border-t border-neutral-800 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-sm text-neutral-500 mb-2">
+                &copy; {new Date().getFullYear()} Reputation Genius, LLC. All Rights Reserved.
+              </p>
+              <p className="text-sm text-neutral-600 italic">
+                We're on a mission to build a better future where technology reviews good jobs for everyone.
+              </p>
             </div>
-            {/* Integration Logos */}
-            <div className="text-sm text-gray-400">
-              Integrates with: Clio, Google, Zapier, Facebook Messenger, Quickbooks
+
+            <div className="flex flex-col items-center md:items-end gap-4">
+              {/* Social Media Icons */}
+              <div className="flex space-x-6">
+                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Facebook">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Twitter">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Instagram">
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </div>
+              {/* Integration Logos */}
+              <div className="text-xs text-neutral-600">
+                Integrates with: Clio, Google, Zapier, Facebook Messenger, Quickbooks
+              </div>
             </div>
           </div>
         </div>

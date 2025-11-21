@@ -70,7 +70,7 @@ export default function PricingPage() {
         }
       ],
       cta: 'START NOW',
-      link: 'https://link.reputation-genius.com/payment-link/687053f5ddc6a608bcc5293d',
+      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f',
       trial: 'Free 14-Day Trial'
     },
     {
@@ -100,7 +100,7 @@ export default function PricingPage() {
         }
       ],
       cta: 'START NOW',
-      link: 'https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b',
+      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996',
       trial: 'Free 14-Day Trial'
     },
     {
@@ -124,7 +124,7 @@ export default function PricingPage() {
         }
       ],
       cta: 'START NOW',
-      link: 'https://link.reputation-genius.com/payment-link/6870559fddc6a62dcac5294d',
+      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936',
       trial: 'Free 14-Day Trial'
     }
   ];
