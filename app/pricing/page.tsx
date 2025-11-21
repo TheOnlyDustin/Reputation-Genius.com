@@ -379,7 +379,7 @@ export default function PricingPage() {
           <p className="text-xl mb-8 text-blue-100">
             Book a personalized demo and let our experts help you choose the perfect plan for your business needs.
           </p>
-          <Link href="/demo" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
+          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
             Book a Demo
           </Link>
         </div>

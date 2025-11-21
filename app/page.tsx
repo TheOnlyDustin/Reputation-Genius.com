@@ -173,7 +173,7 @@ export default function Home() {
                 >
                   Book a Demo
                 </a>
-                <Link href="/pricing" className="btn-secondary">
+                <Link href="/pricing" className="btn-secondary flex items-center justify-center">
                   View Pricing
                 </Link>
               </div>

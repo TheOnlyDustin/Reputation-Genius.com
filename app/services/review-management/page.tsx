@@ -271,8 +271,8 @@ export default function ReviewManagementPage() {
           <p className="text-xl mb-8 text-blue-100">
             Join thousands of businesses using Reputation Genius to collect more reviews and build trust with customers.
           </p>
-          <Link href="/pricing" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
-            Get Started
+          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-cta !bg-white !text-primary !hover:bg-gray-100 inline-flex items-center">
+            Book a Demo
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>

@@ -64,27 +64,27 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      bio: "Former Google product manager with 10+ years in SaaS and AI automation.",
+      name: "Caleb Parks",
+      role: "Team Member",
+      bio: "Dedicated to ensuring customer success and operational excellence.",
       image: "/api/placeholder/150/150"
     },
     {
-      name: "Michael Chen",
-      role: "CTO",
-      bio: "Ex-Microsoft engineer specializing in machine learning and scalable systems.",
+      name: "Dustin Giordani",
+      role: "Co-Founder, Automation & Systems Architect",
+      bio: "Dustin is a systems architect with a bias for outcomes. His first taste of automation was building a scheduling platform for his employer, a landscaping company, that cut manager time by 80%—a win so effective it automated away his own role. He then joined StubHub and eBay, where he designed cybercrime-prevention workflows and led complex investigations. At CodeCraftersAI, he combines experience, automation, and AI to turn business bottlenecks into durable advantages.",
+      image: "https://storage.googleapis.com/msgsndr/YEHG1xosTWTflJmGLTc0/media/68c8f84ef21b31229ea533f4.jpeg"
+    },
+    {
+      name: "Shane Bellefeuille",
+      role: "Team Member",
+      bio: "Passionate about leveraging technology to solve real-world business problems.",
       image: "/api/placeholder/150/150"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Head of Customer Success",
-      bio: "Customer experience expert with a passion for helping businesses grow.",
-      image: "/api/placeholder/150/150"
-    },
-    {
-      name: "David Kim",
-      role: "VP of Engineering",
-      bio: "Full-stack engineering leader with experience at top-tier tech companies.",
+      name: "Jessica",
+      role: "AI Phone and SMS Agent / Receptionist",
+      bio: "Our AI agent who guides customers through the Demo, showcasing how an AI agent could help in your business.",
       image: "/api/placeholder/150/150"
     }
   ];
@@ -238,8 +238,12 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="card text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-12 w-12 text-gray-400" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                {member.image.startsWith('http') ? (
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                ) : (
+                  <Users className="h-12 w-12 text-gray-400" />
+                )}
               </div>
               <h3 className="text-lg font-bold mb-1 text-text-primary">
                 {member.name}
@@ -314,10 +318,10 @@ export default function AboutPage() {
             Join thousands of businesses that have already discovered the power of AI-driven reputation management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pricing" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
+            <Link href="/services" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
               See How We Can Help
             </Link>
-            <Link href="/demo" className="btn-secondary !bg-transparent !text-white !border-white !hover:bg-white !hover:text-primary">
+            <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-secondary !bg-transparent !text-white !border-white !hover:bg-white !hover:text-primary">
               Book a Demo
             </Link>
           </div>

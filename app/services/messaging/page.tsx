@@ -190,7 +190,7 @@ export default function MessagingPage() {
           <p className="text-xl mb-8 text-blue-100">
             See how our unified communication platform can transform the way you connect with customers. Book a demo to get started.
           </p>
-          <Link href="/demo" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
+          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-cta !bg-white !text-primary !hover:bg-gray-100 inline-flex items-center">
             Book a Demo
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
