@@ -63,12 +63,7 @@ export default function AboutPage() {
   ];
 
   const team = [
-    {
-      name: "Caleb Parks",
-      role: "Team Member",
-      bio: "Dedicated to ensuring customer success and operational excellence.",
-      image: "/api/placeholder/150/150"
-    },
+
     {
       name: "Dustin Giordani",
       role: "Co-Founder, Automation & Systems Architect",
@@ -84,7 +79,7 @@ export default function AboutPage() {
     {
       name: "Jessica",
       role: "AI Phone and SMS Agent / Receptionist",
-      bio: "Jessica is Reputation Genius's AI-powered phone and SMS agent, designed to handle customer inquiries, qualify leads, and provide instant support 24/7. From her first interaction, Jessica was programmed to understand natural conversation, empathize with customers, and guide them through complex business processes—like booking appointments or answering common questions—with remarkable accuracy. She never sleeps, never takes a break, and ensures no call or message goes unanswered. At the heart of our AI employee platform, Jessica demonstrates how intelligent automation can transform customer service, turning every interaction into an opportunity to impress and convert. She's not just answering questions; she's building relationships and driving business results around the clock.",
+      bio: "Jessica is Reputation Genius's AI-powered phone and SMS agent, designed to handle inquiries, qualify leads, and provide support 24/7. She understands natural conversation and guides customers through processes like booking appointments with remarkable accuracy. She never sleeps, ensuring no message goes unanswered. As the heart of our AI platform, Jessica demonstrates how intelligent automation transforms customer service, turning every interaction into an opportunity to impress and convert.",
       image: "/api/placeholder/150/150",
       phone: "tel:+14133142553"
     }
@@ -236,7 +231,7 @@ export default function AboutPage() {
             The passionate experts behind Reputation Genius
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="card text-center">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
