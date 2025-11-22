@@ -159,6 +159,15 @@ export default function PricingPage() {
       ]
     },
     {
+      category: 'Social Media',
+      features: [
+        { name: 'Social Media Planner', essentials: false, professional: true, platinum: true },
+        { name: 'Automated Social Media Posting', essentials: false, professional: false, platinum: true },
+        { name: 'Social Media AI Responder/Booking Agent', essentials: false, professional: false, platinum: true },
+        { name: 'AI Content Creator', essentials: false, professional: false, platinum: true }
+      ]
+    },
+    {
       category: 'AI Features',
       features: [
         { name: 'AI Marketing Automation', essentials: false, professional: false, platinum: true },

@@ -23,7 +23,15 @@ export default function Home() {
       description: 'Automatically collect, respond to, and showcase 5-star reviews across all platforms.',
       href: '/services/review-management',
       color: 'bg-blue-500',
-      colSpan: 'md:col-span-2',
+      colSpan: 'md:col-span-1',
+    },
+    {
+      icon: <Globe className="h-6 w-6 text-white" />,
+      title: 'Social Media Planner',
+      description: 'Plan and schedule posts effortlessly across all major platforms to keep your business active.',
+      href: '/services/social-media-planner',
+      color: 'bg-teal-500',
+      colSpan: 'md:col-span-1',
     },
     {
       icon: <MessageSquare className="h-6 w-6 text-white" />,
@@ -373,8 +381,44 @@ export default function Home() {
               Connects with the tools you already use.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {integrations.map((integration, index) => (
+
+          {/* Mobile: Logos */}
+          <div className="flex md:hidden flex-wrap justify-center items-center gap-8 opacity-70 grayscale transition-all duration-500">
+            {/* Stripe */}
+            <div className="w-12 h-12 flex items-center justify-center" aria-label="Stripe">
+              <svg viewBox="0 0 32 32" className="w-full h-full fill-current text-[#635BFF]">
+                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.98-1.725l-.906 5.54c1.321.547 3.66.914 5.89.914 2.609 0 4.79-.702 6.34-1.93 1.545-1.22 2.383-3.06 2.383-5.303 0-4.073-2.596-5.8-6.625-7.263z" />
+              </svg>
+            </div>
+            {/* Google */}
+            <div className="w-10 h-10 flex items-center justify-center" aria-label="Google">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#4285F4]">
+                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.333.533 12S5.867 24 12.48 24c3.44 0 6.013-1.147 8.027-3.24 2.053-2.08 2.667-5.013 2.667-7.467 0-.747-.053-1.467-.16-2.187h-10.53z" />
+              </svg>
+            </div>
+            {/* Zapier */}
+            <div className="w-10 h-10 flex items-center justify-center" aria-label="Zapier">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#FF4F00]">
+                <path d="M4.19 17.51h4.64l-1.78 6.49 12.76-12.76h-5.83l2.19-6.49L3.41 17.51h.78z" />
+              </svg>
+            </div>
+            {/* Facebook */}
+            <div className="w-10 h-10 flex items-center justify-center" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#1877F2]">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </div>
+            {/* QuickBooks */}
+            <div className="w-10 h-10 flex items-center justify-center" aria-label="QuickBooks">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current text-[#2CA01C]">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1.5-5h3v-2h-3v2zm0-4h3V7h-3v6z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Desktop: Text */}
+          <div className="hidden md:flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {['Stripe', 'Google', 'Zapier', 'Facebook', 'Quickbooks'].map((integration, index) => (
               <div key={index} className="text-2xl md:text-3xl font-bold text-neutral-400 hover:text-primary transition-colors cursor-default">
                 {integration}
               </div>
@@ -403,14 +447,12 @@ export default function Home() {
             >
               Book a Demo
             </a>
-            <a
-              href="https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f"
+            <Link
+              href="/pricing"
               className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Start Free Trial
-            </a>
+              See Packages
+            </Link>
           </div>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-blue-100 font-medium">
             <div className="flex items-center">

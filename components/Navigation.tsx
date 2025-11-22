@@ -11,6 +11,7 @@ const Navigation = () => {
 
   const services = [
     { name: 'Review Management', href: '/services/review-management' },
+    { name: 'Social Media Planner', href: '/services/social-media-planner' },
     { name: 'Messaging & Communication', href: '/services/messaging' },
     { name: 'Webchat Solutions', href: '/services/webchat' },
     { name: 'CRM & Lead Management', href: '/services/crm' },
