@@ -10,13 +10,13 @@ const nextConfig = {
     ],
   },
   productionBrowserSourceMaps: false,
-  headers: [
+  headers: () => [
     {
       source: '/(.*)',
       headers: [
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-src 'none'",
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-src https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app",
         },
         {
           key: 'X-Frame-Options',
