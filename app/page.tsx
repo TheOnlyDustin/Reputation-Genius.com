@@ -172,6 +172,19 @@ export default function Home() {
               <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed">
                 Automate your reputation, dominate local search, and turn every customer interaction into a 5-star opportunity with AI.
               </p>
+              <div className="relative lg:hidden mb-8">
+                <div className="absolute -inset-3 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
+                  >
+                    <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
