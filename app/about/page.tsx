@@ -119,8 +119,8 @@ export default function AboutPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-white section-container !pt-24 !pb-12">
-        <div className="text-center">
+      <section className="bg-white !pt-24 !pb-12">
+        <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
             About Reputation Genius
           </h1>
@@ -131,201 +131,217 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="bg-background-alt section-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-primary">
-            Our Mission
-          </h2>
-          <p className="text-xl md:text-2xl text-text-secondary leading-relaxed">
-            We're on a mission to build a better future where technology reviews good jobs for everyone.
-          </p>
-          <p className="text-lg text-text-secondary mt-6 max-w-3xl mx-auto">
-            Every business deserves the chance to shine online. We're democratizing reputation management by making powerful AI tools accessible to businesses of all sizes, ensuring no customer interaction goes unanswered and no opportunity is missed.
-          </p>
-        </div>
-      </section>
-
-      {/* Company Story */}
-      <section className="bg-white section-container">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-text-primary">
-            Our Story
-          </h2>
-          <div className="prose prose-lg max-w-none text-text-secondary">
-            <p className="text-lg leading-relaxed mb-6">
-              Founded in 2020, Reputation Genius was born from a simple observation: too many businesses were losing customers because they couldn't keep up with online reviews and communications.
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-primary">
+              Our Mission
+            </h2>
+            <p className="text-xl md:text-2xl text-text-secondary leading-relaxed">
+              We're on a mission to build a better future where technology reviews good jobs for everyone.
             </p>
-            <p className="text-lg leading-relaxed mb-6">
-              Our founders, having worked at top tech companies like Google and Microsoft, saw an opportunity to apply cutting-edge AI and automation to solve this universal business problem. What started as a small team of engineers has grown into a comprehensive platform trusted by thousands of businesses worldwide.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Today, we're proud to be the leading AI-powered reputation management platform, helping businesses not just survive, but thrive in the digital age. We're on a mission to build a better future where technology reviews good jobs for everyone.
+            <p className="text-lg text-text-secondary mt-6 max-w-3xl mx-auto">
+              Every business deserves the chance to shine online. We're democratizing reputation management by making powerful AI tools accessible to businesses of all sizes, ensuring no customer interaction goes unanswered and no opportunity is missed.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Value Propositions */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-            Why Businesses Choose Reputation Genius
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Transform your business operations with our comprehensive suite of AI-powered tools
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {valueProps.map((prop, index) => (
-            <div key={index} className="card text-center">
-              <div className="flex justify-center mb-4">
-                {prop.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-text-primary">
-                {prop.title}
-              </h3>
-              <p className="text-text-secondary">
-                {prop.description}
+      {/* Company Story */}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-text-primary">
+              Our Story
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-secondary">
+              <p className="text-lg leading-relaxed mb-6">
+                Founded in 2020, Reputation Genius was born from a simple observation: too many businesses were losing customers because they couldn't keep up with online reviews and communications.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                Our founders, having worked at top tech companies like Google and Microsoft, saw an opportunity to apply cutting-edge AI and automation to solve this universal business problem. What started as a small team of engineers has grown into a comprehensive platform trusted by thousands of businesses worldwide.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Today, we're proud to be the leading AI-powered reputation management platform, helping businesses not just survive, but thrive in the digital age. We're on a mission to build a better future where technology reviews good jobs for everyone.
               </p>
             </div>
-          ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Value Propositions */}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+              Why Businesses Choose Reputation Genius
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Transform your business operations with our comprehensive suite of AI-powered tools
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {valueProps.map((prop, index) => (
+              <div key={index} className="card text-center">
+                <div className="flex justify-center mb-4">
+                  {prop.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-text-primary">
+                  {prop.title}
+                </h3>
+                <p className="text-text-secondary">
+                  {prop.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-            Why Choose Us
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            What sets Reputation Genius apart from the competition
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {whyChooseUs.map((reason, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">
-                {reason.icon}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+              Why Choose Us
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              What sets Reputation Genius apart from the competition
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {whyChooseUs.map((reason, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0 mt-1">
+                  {reason.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-text-primary">
+                    {reason.title}
+                  </h3>
+                  <p className="text-text-secondary">
+                    {reason.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-text-primary">
-                  {reason.title}
-                </h3>
-                <p className="text-text-secondary">
-                  {reason.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-            Meet Our Team
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            The passionate experts behind Reputation Genius
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {team.map((member, index) => (
-            <div key={index} className="card text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                {member.image.startsWith('http') ? (
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                ) : (
-                  <Users className="h-12 w-12 text-gray-400" />
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              The passionate experts behind Reputation Genius
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {team.map((member, index) => (
+              <div key={index} className="card text-center">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                  {member.image.startsWith('http') ? (
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <Users className="h-12 w-12 text-gray-400" />
+                  )}
+                </div>
+                <h3 className="text-lg font-bold mb-1 text-text-primary">
+                  {member.name}
+                </h3>
+                <p className="text-primary font-medium mb-3">
+                  {member.role}
+                </p>
+                <p className="text-sm text-text-secondary">
+                  {member.bio}
+                </p>
+                {member.phone && (
+                  <a
+                    href={member.phone}
+                    className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
+                  >
+                    Try Her Now
+                  </a>
                 )}
               </div>
-              <h3 className="text-lg font-bold mb-1 text-text-primary">
-                {member.name}
-              </h3>
-              <p className="text-primary font-medium mb-3">
-                {member.role}
-              </p>
-              <p className="text-sm text-text-secondary">
-                {member.bio}
-              </p>
-              {member.phone && (
-                <a
-                  href={member.phone}
-                  className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
-                >
-                  Try Her Now
-                </a>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Company Stats */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-            Our Impact
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Real numbers that showcase our commitment to excellence
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-4">
-                {stat.icon}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+              Our Impact
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Real numbers that showcase our commitment to excellence
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="flex justify-center mb-4">
+                  {stat.icon}
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {stat.number}
+                </div>
+                <p className="text-lg font-medium text-text-primary">
+                  {stat.label}
+                </p>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.number}
-              </div>
-              <p className="text-lg font-medium text-text-primary">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Trust Badges */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-            Trusted & Certified
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Your data security and privacy are our top priorities
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
-          {certifications.map((cert, index) => (
-            <div key={index} className="bg-white px-6 py-3 rounded-lg shadow-md border border-border">
-              <div className="flex items-center space-x-2">
-                <Award className="h-5 w-5 text-primary" />
-                <span className="font-medium text-text-primary">{cert}</span>
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+              Trusted & Certified
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Your data security and privacy are our top priorities
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
+            {certifications.map((cert, index) => (
+              <div key={index} className="bg-white px-6 py-3 rounded-lg shadow-md border border-border">
+                <div className="flex items-center space-x-2">
+                  <Award className="h-5 w-5 text-primary" />
+                  <span className="font-medium text-text-primary">{cert}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTAs Section */}
-      <section className="bg-primary text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join thousands of businesses that have already discovered the power of AI-driven reputation management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/services" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
+            <Link href="/services" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
               See How We Can Help
             </Link>
-            <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-secondary !bg-transparent !text-white !border-white !hover:bg-white !hover:text-primary">
+            <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300">
               Book a Demo
             </Link>
           </div>

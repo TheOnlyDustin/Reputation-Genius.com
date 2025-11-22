@@ -371,8 +371,10 @@ export default function PricingPage() {
       </section>
 
       {/* Not Sure Section */}
-      <section className="bg-primary text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative w-full max-w-none py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Not sure which plan is right for you?
           </h2>

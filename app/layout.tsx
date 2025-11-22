@@ -5,6 +5,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 
@@ -34,6 +36,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

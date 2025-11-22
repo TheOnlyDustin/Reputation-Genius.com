@@ -123,8 +123,8 @@ export default function ReviewManagementPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-white section-container !pt-24 !pb-12">
-        <div className="text-center">
+      <section className="bg-white !pt-24 !pb-12">
+        <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
             Automated Review Management
           </h1>
@@ -135,143 +135,153 @@ export default function ReviewManagementPage() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Powerful Review Management Features
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Everything you need to collect, manage, and showcase customer reviews across all platforms.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="card">
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-text-secondary">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Powerful Review Management Features
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Everything you need to collect, manage, and showcase customer reviews across all platforms.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="card">
+                <div className="mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-text-secondary">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            How It Works
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Get started with automated review management in three simple steps.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {howItWorks.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                {step.step}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Get started with automated review management in three simple steps.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {howItWorks.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-text-secondary">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                {step.title}
-              </h3>
-              <p className="text-text-secondary">
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose Automated Review Management?
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Transform your online reputation and grow your business with intelligent review automation.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="card text-center">
-              <div className="mb-4 flex justify-center">{benefit.icon}</div>
-              <h3 className="text-lg font-semibold mb-3">
-                {benefit.title}
-              </h3>
-              <p className="text-text-secondary text-sm">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Automated Review Management?
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Transform your online reputation and grow your business with intelligent review automation.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="card text-center">
+                <div className="mb-4 flex justify-center">{benefit.icon}</div>
+                <h3 className="text-lg font-semibold mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Pricing Tiers Section */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Review Management Included In All Plans
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Choose the plan that fits your business needs. All plans include powerful review management features.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {pricingTiers.map((tier, index) => (
-            <div key={index} className={`card flex flex-col h-full relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
-              {tier.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                  {tier.badge}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Review Management Included In All Plans
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Choose the plan that fits your business needs. All plans include powerful review management features.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {pricingTiers.map((tier, index) => (
+              <div key={index} className={`card flex flex-col h-full relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
+                {tier.badge && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    {tier.badge}
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                  <div className="text-4xl font-bold text-primary mb-1">
+                    {tier.price}<span className="text-lg font-normal text-text-secondary">{tier.period}</span>
+                  </div>
+                  <p className="text-sm text-text-secondary">{tier.tagline}</p>
                 </div>
-              )}
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <div className="text-4xl font-bold text-primary mb-1">
-                  {tier.price}<span className="text-lg font-normal text-text-secondary">{tier.period}</span>
+                <div className="mb-8 flex-grow">
+                  <h4 className="font-semibold text-text-primary mb-4">Review Management Features:</h4>
+                  <ul className="space-y-3">
+                    {tier.reviewFeatures.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-sm text-text-secondary">{tier.tagline}</p>
+                <div className="text-center mt-auto">
+                  <a
+                    href={tier.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-cta w-full text-center block"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
-              <div className="mb-8 flex-grow">
-                <h4 className="font-semibold text-text-primary mb-4">Review Management Features:</h4>
-                <ul className="space-y-3">
-                  {tier.reviewFeatures.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="text-center mt-auto">
-                <a
-                  href={tier.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-cta w-full text-center block"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-primary text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Ready to Automate Your Review Management?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join thousands of businesses using Reputation Genius to collect more reviews and build trust with customers.
           </p>
-          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-cta !bg-white !text-primary !hover:bg-gray-100 inline-flex items-center">
+          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center">
             Book a Demo
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

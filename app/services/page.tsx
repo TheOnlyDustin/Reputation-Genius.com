@@ -46,8 +46,8 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-white section-container !pt-24 !pb-12">
-        <div className="text-center">
+      <section className="bg-white !pt-24 !pb-12">
+        <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
             Our Services
           </h1>
@@ -58,36 +58,40 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Cards Section */}
-      <section className="section-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Link key={index} href={service.href} className="card group hover:shadow-xl transition-shadow">
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-text-secondary mb-4">
-                {service.description}
-              </p>
-              <div className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
-            </Link>
-          ))}
+      <section className="">
+        <div className="section-container">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Link key={index} href={service.href} className="card group hover:shadow-xl transition-shadow">
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-text-secondary mb-4">
+                  {service.description}
+                </p>
+                <div className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Not Sure Section */}
-      <section className="bg-primary text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Not sure which services you need?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Book a personalized demo and let our experts help you choose the perfect services for your business needs.
           </p>
-          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="btn-cta !bg-white !text-primary !hover:bg-gray-100">
+          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-block">
             Book a Demo
           </Link>
         </div>

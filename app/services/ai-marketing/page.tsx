@@ -132,8 +132,8 @@ export default function AIMarketingPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-primary/10 to-accent/10 section-container !pt-24 !pb-12">
-        <div className="text-center">
+      <section className="bg-gradient-to-br from-primary/10 to-accent/10 !pt-24 !pb-12">
+        <div className="section-container text-center">
           <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Crown className="h-4 w-4 mr-2" />
             Platinum Exclusive Feature
@@ -148,115 +148,125 @@ export default function AIMarketingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Enterprise-Level AI Marketing
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Advanced artificial intelligence that transforms how you nurture leads and grow your business.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="card hover:shadow-xl transition-shadow duration-300">
-              <div className="mb-4 flex justify-center">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-center">
-                {feature.title}
-              </h3>
-              <p className="text-text-secondary text-center">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Enterprise-Level AI Marketing
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Advanced artificial intelligence that transforms how you nurture leads and grow your business.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <div key={index} className="card hover:shadow-xl transition-shadow duration-300">
+                <div className="mb-4 flex justify-center">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-3 text-center">
+                  {feature.title}
+                </h3>
+                <p className="text-text-secondary text-center">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ROI Calculator Section */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Calculate Your ROI
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            See how AI marketing automation can transform your business metrics and bottom line.
-          </p>
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Calculate Your ROI
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              See how AI marketing automation can transform your business metrics and bottom line.
+            </p>
+          </div>
+          <ROICalculator />
         </div>
-        <ROICalculator />
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Proven Results & Benefits
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Join leading businesses already using AI to revolutionize their marketing.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {roiBenefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center mb-3">
-                {benefit.icon}
-                <h3 className="text-lg font-semibold ml-3">
-                  {benefit.title}
-                </h3>
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Proven Results & Benefits
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Join leading businesses already using AI to revolutionize their marketing.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {roiBenefits.map((benefit, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center mb-3">
+                  {benefit.icon}
+                  <h3 className="text-lg font-semibold ml-3">
+                    {benefit.title}
+                  </h3>
+                </div>
+                <p className="text-text-secondary text-sm">
+                  {benefit.description}
+                </p>
               </div>
-              <p className="text-text-secondary text-sm">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Availability Section */}
-      <section className="bg-white section-container">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Exclusive to Platinum Tier
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-            This premium AI marketing automation feature is available exclusively in our Platinum plan, designed for businesses serious about growth.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center opacity-50">
-              <div className="text-2xl mb-2">🚫</div>
-              <p className="font-semibold">Essentials</p>
-              <p className="text-sm text-text-secondary">$97/month</p>
-              <p className="text-xs text-gray-500 mt-1">Not Available</p>
-            </div>
-            <div className="text-center opacity-50">
-              <div className="text-2xl mb-2">🚫</div>
-              <p className="font-semibold">Professional</p>
-              <p className="text-sm text-text-secondary">$297/month</p>
-              <p className="text-xs text-gray-500 mt-1">Not Available</p>
-            </div>
-            <div className="text-center">
-              <Crown className="h-12 w-12 text-yellow-500 mx-auto mb-2" />
-              <p className="font-semibold text-primary">Platinum</p>
-              <p className="text-sm text-text-secondary">$497/month</p>
-              <p className="text-xs text-primary font-medium mt-1">✓ AI Marketing Included</p>
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Exclusive to Platinum Tier
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+              This premium AI marketing automation feature is available exclusively in our Platinum plan, designed for businesses serious about growth.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center opacity-50">
+                <div className="text-2xl mb-2">🚫</div>
+                <p className="font-semibold">Essentials</p>
+                <p className="text-sm text-text-secondary">$97/month</p>
+                <p className="text-xs text-gray-500 mt-1">Not Available</p>
+              </div>
+              <div className="text-center opacity-50">
+                <div className="text-2xl mb-2">🚫</div>
+                <p className="font-semibold">Professional</p>
+                <p className="text-sm text-text-secondary">$297/month</p>
+                <p className="text-xs text-gray-500 mt-1">Not Available</p>
+              </div>
+              <div className="text-center">
+                <Crown className="h-12 w-12 text-yellow-500 mx-auto mb-2" />
+                <p className="font-semibold text-primary">Platinum</p>
+                <p className="text-sm text-text-secondary">$497/month</p>
+                <p className="text-xs text-primary font-medium mt-1">✓ AI Marketing Included</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
           <Crown className="h-16 w-16 mx-auto mb-6 text-yellow-300" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Ready to Unlock AI-Powered Growth?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join the elite businesses using AI marketing automation to dominate their markets.
           </p>
           <Link
             href="https://link.reputation-genius.com/payment-link/6870559fddc6a62dcac5294d"
-            className="btn-cta !bg-white !text-primary !hover:bg-gray-100 inline-flex items-center text-lg px-8 py-4"
+            className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center text-lg"
           >
             Upgrade to Platinum
             <ArrowRight className="ml-2 h-6 w-6" />

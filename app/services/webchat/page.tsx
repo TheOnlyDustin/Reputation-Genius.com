@@ -84,8 +84,8 @@ export default function WebchatPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-white section-container !pt-24 !pb-12">
-        <div className="text-center">
+      <section className="bg-white !pt-24 !pb-12">
+        <div className="section-container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
             Webchat That Converts
           </h1>
@@ -96,121 +96,131 @@ export default function WebchatPage() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Conversion-Focused Webchat
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Our intelligent webchat widget doesn't just chat—it converts browsers into buyers.
-          </p>
-        </div>
-        <div className="max-w-4xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="card text-center">
-              <div className="mb-4 flex justify-center">{feature.icon}</div>
-              <h3 className="text-2xl font-semibold mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-text-secondary text-lg">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Conversion-Focused Webchat
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Our intelligent webchat widget doesn't just chat—it converts browsers into buyers.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            {features.map((feature, index) => (
+              <div key={index} className="card text-center">
+                <div className="mb-4 flex justify-center">{feature.icon}</div>
+                <h3 className="text-2xl font-semibold mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-text-secondary text-lg">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Live Demo Section */}
-      <section className="bg-white section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            See It In Action
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Experience how our webchat widget engages visitors and drives conversions in real-time.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-          <WebchatDemo />
-          <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-            <video
-              className="w-full h-full object-cover"
-              controls
-              poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6dbb78b2801822bc32447.jpeg"
-            >
-              <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              See It In Action
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Experience how our webchat widget engages visitors and drives conversions in real-time.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <WebchatDemo />
+            <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6dbb78b2801822bc32447.jpeg"
+              >
+                <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-background-alt section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Webchat Drives Conversions
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Discover the powerful benefits of implementing conversion-focused webchat on your website.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="card">
-              <div className="mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">
-                {benefit.title}
-              </h3>
-              <p className="text-text-secondary">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-background-alt">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Webchat Drives Conversions
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Discover the powerful benefits of implementing conversion-focused webchat on your website.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="card">
+                <div className="mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-text-secondary">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Availability Section */}
-      <section className="bg-white section-container">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Available In All Plans
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-            Our conversion-focused webchat is included in every Reputation Genius plan, giving you the tools to turn visitors into customers at any level.
-          </p>
-          <div className="flex items-center justify-center space-x-8">
-            <div className="text-center">
-              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
-              <p className="font-semibold">Essentials</p>
-              <p className="text-sm text-text-secondary">$97/month</p>
-            </div>
-            <div className="text-center">
-              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
-              <p className="font-semibold">Professional</p>
-              <p className="text-sm text-text-secondary">$297/month</p>
-            </div>
-            <div className="text-center">
-              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
-              <p className="font-semibold">Platinum</p>
-              <p className="text-sm text-text-secondary">$497/month</p>
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Available In All Plans
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+              Our conversion-focused webchat is included in every Reputation Genius plan, giving you the tools to turn visitors into customers at any level.
+            </p>
+            <div className="flex items-center justify-center space-x-8">
+              <div className="text-center">
+                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Essentials</p>
+                <p className="text-sm text-text-secondary">$97/month</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Professional</p>
+                <p className="text-sm text-text-secondary">$297/month</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Platinum</p>
+                <p className="text-sm text-text-secondary">$497/month</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-primary text-white section-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Ready to Convert More Visitors?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Start your free trial of our Professional plan and see how webchat can transform your website conversions.
           </p>
           <a
             href="https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b"
-            className="btn-cta !bg-white !text-primary !hover:bg-gray-100 inline-flex items-center"
+            className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center"
             target="_blank"
             rel="noopener noreferrer"
           >
