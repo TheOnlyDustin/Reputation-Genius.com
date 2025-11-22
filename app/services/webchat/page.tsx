@@ -84,14 +84,33 @@ export default function WebchatPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="bg-white !pt-24 !pb-12">
-        <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            Webchat That Converts
-          </h1>
-          <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Turn Website Visitors Into Customers
-          </p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-hero-gradient pt-20 pb-32">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 !py-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-text-primary">
+                Webchat That <span className="text-gradient">Converts</span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed">
+                Turn Website Visitors Into Customers with an intelligent on-site widget.
+              </p>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67755c99119936bc92c72176.webp"
+                >
+                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -133,18 +152,8 @@ export default function WebchatPage() {
               Experience how our webchat widget engages visitors and drives conversions in real-time.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+          <div className="flex justify-center max-w-6xl mx-auto">
             <WebchatDemo />
-            <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6dbb78b2801822bc32447.jpeg"
-              >
-                <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
           </div>
         </div>
       </section>
