@@ -141,9 +141,9 @@ export default function ContactPage() {
       {/* Main Content */}
       <section className="bg-background-alt">
         <div className="section-container">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="flex flex-col gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <div className="w-full">
               <div className="card">
                 <h2 className="text-2xl font-bold mb-6">Ready to see how an AI Employee can work in your business—today?</h2>
 
@@ -175,10 +175,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Information Sidebar */}
-            <div className="space-y-6">
+            {/* Contact Information Tiles */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Contact Info */}
-              <div className="card">
+              <div className="card h-full">
                 <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => (
@@ -203,7 +203,7 @@ export default function ContactPage() {
               </div>
 
               {/* Social Media Links */}
-              <div className="card">
+              <div className="card h-full">
                 <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
@@ -220,7 +220,7 @@ export default function ContactPage() {
               </div>
 
               {/* Location Info */}
-              <div className="card">
+              <div className="card h-full">
                 <h3 className="text-xl font-semibold mb-6">Our Location</h3>
                 <div className="bg-gray-50 rounded-lg p-8 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
