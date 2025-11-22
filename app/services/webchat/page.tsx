@@ -117,12 +117,13 @@ export default function WebchatPage() {
           <div className="flex justify-center max-w-6xl mx-auto">
             <iframe
               src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
-              width="600px"
-              height="500px"
+              width="400px"
+              height="300px"
+              frameBorder="0"
               style={{
-                border: '1px solid #e2e8f0',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
               }}
             />
           </div>
