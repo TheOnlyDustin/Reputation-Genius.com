@@ -120,6 +120,8 @@ export default function WebchatPage() {
               width="400px"
               height="300px"
               frameBorder="0"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+              allow="camera; microphone; geolocation"
               style={{
                 border: '1px solid #ccc',
                 borderRadius: '8px',

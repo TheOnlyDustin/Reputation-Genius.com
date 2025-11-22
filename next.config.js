@@ -5,8 +5,9 @@ const cspDirectives = [
   "img-src 'self' data: https:",
   "font-src 'self' data:",
   "media-src 'self' https://storage.googleapis.com",
-  "connect-src 'self' https://vitals.vercel-insights.com",
+  "connect-src 'self' https://vitals.vercel-insights.com https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app/api/*",
   "frame-src https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app",
+  "frame-ancestors https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app",
 ].join('; ');
 
 const securityHeaders = [
