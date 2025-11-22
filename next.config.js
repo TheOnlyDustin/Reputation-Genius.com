@@ -1,6 +1,6 @@
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
@@ -29,7 +29,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
+    value: 'camera=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app"), microphone=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app"), geolocation=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app")',
   },
   {
     key: 'X-DNS-Prefetch-Control',

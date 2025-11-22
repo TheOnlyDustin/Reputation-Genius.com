@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   MessageSquare,
@@ -10,8 +12,11 @@ import {
   Smartphone,
   Globe
 } from 'lucide-react';
+import Modal from '@/components/Modal';
 
 export default function WebchatPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const features = [
     {
       icon: <MessageSquare className="h-8 w-8 text-accent" />,
@@ -55,9 +60,36 @@ export default function WebchatPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-text-primary">
                 Webchat That <span className="text-gradient">Converts</span>
               </h1>
-              <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed">
+              <p className="text-xl md:text-2xl mb-8 text-text-secondary leading-relaxed">
                 Turn Website Visitors Into Customers with an intelligent on-site widget.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-primary text-white hover:bg-primary-dark font-bold px-8 py-4 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center"
+                >
+                  Try the AI Agent Now
+                  <MessageSquare className="ml-2 h-5 w-5" />
+                </button>
+                <Modal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  title="Experience Our AI Webchat"
+                >
+                  <div className="w-full h-[600px] md:h-[500px]">
+                    <iframe
+                      src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
+                      width="100%"
+                      height="100%"
+                      className="border-0 rounded-lg"
+                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                      allow="camera *; microphone *; geolocation *"
+                      title="Webchat Demo"
+                      loading="lazy"
+                    />
+                  </div>
+                </Modal>
+              </div>
             </div>
             <div className="relative hidden lg:block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -103,34 +135,7 @@ export default function WebchatPage() {
         </div>
       </section>
 
-      {/* Live Demo Section */}
-      <section className="bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              See It In Action
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Experience how our webchat widget engages visitors and drives conversions in real-time.
-            </p>
-          </div>
-          <div className="flex justify-center max-w-6xl mx-auto">
-            <iframe
-              src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
-              width="400px"
-              height="300px"
-              frameBorder="0"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-              allow="camera; microphone; geolocation"
-              style={{
-                border: '1px solid #ccc',
-                borderRadius: '8px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-              }}
-            />
-          </div>
-        </div>
-      </section>
+
 
       {/* Benefits Section */}
       <section className="bg-background-alt">
