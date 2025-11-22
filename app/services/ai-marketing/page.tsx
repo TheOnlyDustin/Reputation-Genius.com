@@ -131,19 +131,37 @@ export default function AIMarketingPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section className="bg-gradient-to-br from-primary/10 to-accent/10 !pt-24 !pb-12">
-        <div className="section-container text-center">
-          <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Crown className="h-4 w-4 mr-2" />
-            Platinum Exclusive Feature
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-hero-gradient pt-20 pb-24">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 !py-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Crown className="h-4 w-4 mr-2" />
+                Platinum Exclusive Feature
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-text-primary">
+                AI-Powered Marketing Automation
+              </h1>
+              <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto lg:mx-0">
+                Never Lose Another Lead Or Customer Again
+              </p>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69216cca090c4ac2d2260476.jpg"
+                >
+                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460a03469600110654def.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            AI-Powered Marketing Automation
-          </h1>
-          <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Never Lose Another Lead Or Customer Again
-          </p>
         </div>
       </section>
 
