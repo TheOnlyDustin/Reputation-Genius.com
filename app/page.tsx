@@ -1,5 +1,7 @@
 
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -12,10 +14,14 @@ import {
   ArrowRight,
   Shield,
   TrendingUp,
-  Globe
+  Globe,
+  DollarSign
 } from 'lucide-react';
 
+import Modal from '@/components/Modal';
+
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const features = [
     {
       icon: <Star className="h-6 w-6 text-white" />,
@@ -185,18 +191,45 @@ export default function Home() {
                   </video>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start items-center">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+                >
+                  See AI in Action
+                  <MessageSquare className="ml-2 h-4 w-4" />
+                </button>
                 <a
                   href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-cta"
+                  className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
                 >
-                  Book a Demo
+                  Book a Call
+                  <Phone className="ml-2 h-4 w-4" />
                 </a>
-                <Link href="/pricing" className="btn-secondary flex items-center justify-center">
+                <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                   View Pricing
+                  <DollarSign className="ml-2 h-4 w-4" />
                 </Link>
+                <Modal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  title="Experience Our AI Webchat"
+                >
+                  <div className="w-full h-[600px] md:h-[500px]">
+                    <iframe
+                      src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
+                      width="100%"
+                      height="100%"
+                      className="border-0 rounded-lg"
+                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                      allow="camera *; microphone *; geolocation *"
+                      title="Webchat Demo"
+                      loading="lazy"
+                    />
+                  </div>
+                </Modal>
               </div>
               <div className="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
                 <div className="flex items-center">
