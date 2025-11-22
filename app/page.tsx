@@ -163,12 +163,12 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-hero-gradient pt-20 pb-32">
+      <section className="relative overflow-hidden bg-hero-gradient pt-12 md:pt-20 pb-16 md:pb-32">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 !py-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-primary font-medium text-sm mb-6 border border-blue-100">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-primary font-medium text-sm mb-3 md:mb-6 border border-blue-100">
                 <Star className="h-4 w-4 mr-2 fill-current" />
                 Trusted by 500+ Local Businesses
               </div>
@@ -191,7 +191,7 @@ export default function Home() {
                   </video>
                 </div>
               </div>
-              <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start items-center">
+              <div className="flex flex-col gap-3 justify-center items-center lg:flex-row lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -231,7 +231,7 @@ export default function Home() {
                   </div>
                 </Modal>
               </div>
-              <div className="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
+              <div className="mt-4 md:mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
                   No credit card required
@@ -262,7 +262,7 @@ export default function Home() {
       {/* Social Proof/Stats Section */}
       <section className="bg-white border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors">
                 <div className="mb-3 p-3 bg-neutral-100 rounded-full">
@@ -281,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Features Section (Bento Grid) */}
-      <section className="section-container bg-background-alt">
+      <section className="section-container bg-background-alt py-12 md:py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
             Everything You Need to <span className="text-primary">Dominate</span>
@@ -294,7 +294,7 @@ export default function Home() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-8 border border-border overflow-hidden ${feature.colSpan}`}
+              className={`group relative bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-8 border border-border overflow-hidden flex flex-col items-center text-center md:block md:text-left ${feature.colSpan}`}
             >
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500`}></div>
               <div className={`inline-flex p-3 rounded-lg ${feature.color} mb-6 shadow-lg`}>
@@ -308,7 +308,7 @@ export default function Home() {
               </p>
               <Link
                 href={feature.href}
-                className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors group-hover:translate-x-1 duration-300"
+                className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors group-hover:translate-x-1 duration-300 self-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -352,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Overview Section */}
-      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 !py-24">
+      <section className="section-container bg-neutral-900 text-white relative overflow-hidden rounded-3xl my-12 !py-16 md:!py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -366,7 +366,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto px-4">
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
@@ -417,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* Integration Showcase */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="section-container !py-0">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-text-primary">
@@ -430,10 +430,11 @@ export default function Home() {
 
           {/* Mobile: Logos */}
           <div className="flex md:hidden flex-wrap justify-center items-center gap-8 opacity-70 grayscale transition-all duration-500">
-            {/* Stripe */}
-            <div className="w-12 h-12 flex items-center justify-center" aria-label="Stripe">
-              <svg viewBox="0 0 32 32" className="w-full h-full fill-current text-[#635BFF]">
-                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.98-1.725l-.906 5.54c1.321.547 3.66.914 5.89.914 2.609 0 4.79-.702 6.34-1.93 1.545-1.22 2.383-3.06 2.383-5.303 0-4.073-2.596-5.8-6.625-7.263z" />
+            {/* Clio */}
+            <div className="w-12 h-12 flex items-center justify-center" aria-label="Clio">
+              <svg viewBox="0 0 32 32" className="w-full h-full fill-current text-[#0066CC]">
+                <rect x="4" y="4" width="24" height="24" rx="4" ry="4" fill="currentColor"/>
+                <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             {/* Google */}
@@ -464,7 +465,7 @@ export default function Home() {
 
           {/* Desktop: Text */}
           <div className="hidden md:flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {['Stripe', 'Google', 'Zapier', 'Facebook', 'Quickbooks'].map((integration, index) => (
+            {['Clio', 'Google', 'Zapier', 'Facebook', 'Quickbooks'].map((integration, index) => (
               <div key={index} className="text-2xl md:text-3xl font-bold text-neutral-400 hover:text-primary transition-colors cursor-default">
                 {integration}
               </div>

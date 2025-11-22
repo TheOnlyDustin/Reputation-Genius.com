@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Reputation Genius - AI-Powered Reputation Management for Local Businesses',
   description: 'Transform your online presence with AI-powered reputation management, automated follow-up systems, and comprehensive review management for service businesses.',
   keywords: 'reputation management, online reviews, AI chatbot, business automation, local SEO, review management',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Reputation Genius - AI-Powered Reputation Management',
     description: 'Transform your online presence with AI-powered reputation management for service businesses.',
