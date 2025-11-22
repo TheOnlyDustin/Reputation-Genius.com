@@ -43,44 +43,6 @@ export default function WebchatPage() {
     }
   ];
 
-  const WebchatDemo = () => (
-    <div className="bg-white border-2 border-gray-200 rounded-lg shadow-lg max-w-md mx-auto">
-      <div className="bg-primary text-white p-4 rounded-t-lg">
-        <h3 className="font-semibold">Live Chat Demo</h3>
-        <p className="text-sm opacity-90">How can we help you today?</p>
-      </div>
-      <div className="p-4 space-y-3">
-        <div className="flex justify-start">
-          <div className="bg-gray-100 rounded-lg p-3 max-w-xs">
-            <p className="text-sm">Hi! I'm interested in your webchat solution.</p>
-          </div>
-        </div>
-        <div className="flex justify-end">
-          <div className="bg-primary text-white rounded-lg p-3 max-w-xs">
-            <p className="text-sm">Great! Our webchat converts visitors to customers. Would you like a demo?</p>
-          </div>
-        </div>
-        <div className="flex justify-start">
-          <div className="bg-gray-100 rounded-lg p-3 max-w-xs">
-            <p className="text-sm">Yes, that sounds perfect!</p>
-          </div>
-        </div>
-      </div>
-      <div className="p-4 border-t">
-        <div className="flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Type your message..."
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-          />
-          <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold">
-            Send
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <>
       {/* Header Section */}
@@ -153,7 +115,16 @@ export default function WebchatPage() {
             </p>
           </div>
           <div className="flex justify-center max-w-6xl mx-auto">
-            <WebchatDemo />
+            <iframe
+              src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
+              width="400px"
+              height="300px"
+              style={{
+                border: '1px solid #e2e8f0',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+              }}
+            />
           </div>
         </div>
       </section>
