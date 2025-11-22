@@ -1,5 +1,8 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Modal from '@/components/Modal';
 import {
   Target,
   Users,
@@ -68,7 +71,11 @@ export default function AboutPage() {
       name: "Dustin Giordani",
       role: "Co-Founder, Automation & Systems Architect",
       bio: "Dustin is a systems architect with a bias for outcomes. His first taste of automation was building a scheduling platform for his employer, a landscaping company, that cut manager time by 80%—a win so effective it automated away his own role. He then joined StubHub and eBay, where he designed cybercrime-prevention workflows and led complex investigations. At CodeCraftersAI, he combines experience, automation, and AI to turn business bottlenecks into durable advantages.",
-      image: "https://storage.googleapis.com/msgsndr/YEHG1xosTWTflJmGLTc0/media/68c8f84ef21b31229ea533f4.jpeg"
+      image: "https://storage.googleapis.com/msgsndr/YEHG1xosTWTflJmGLTc0/media/68c8f84ef21b31229ea533f4.jpeg",
+      button: {
+        text: "Book an Appointment",
+        href: "/contact"
+      }
     },
     {
       name: "Shane Bellefeuille",
@@ -84,6 +91,18 @@ export default function AboutPage() {
       phone: "tel:+14133142553"
     }
   ];
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const stats = [
     {
@@ -259,13 +278,30 @@ export default function AboutPage() {
                 <p className="text-sm text-text-secondary">
                   {member.bio}
                 </p>
-                {member.phone && (
+                {member.button && (
                   <a
-                    href={member.phone}
+                    href={member.button.href}
                     className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
                   >
-                    Try Her Now
+                    {member.button.text}
                   </a>
+                )}
+                {member.phone && (
+                  isMobile ? (
+                    <a
+                      href={member.phone}
+                      className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
+                    >
+                      Try Her Now
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => setIsModalOpen(true)}
+                      className="btn-cta mt-4 inline-block text-sm !py-2 !px-4"
+                    >
+                      Try Her Now
+                    </button>
+                  )
                 )}
               </div>
             ))}
@@ -356,6 +392,24 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Experience Our AI Webchat"
+      >
+        <div className="w-full h-[600px] md:h-[500px]">
+          <iframe
+            src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
+            width="100%"
+            height="100%"
+            className="border-0 rounded-lg"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+            allow="camera *; microphone *; geolocation *"
+            title="Webchat Demo"
+            loading="lazy"
+          />
+        </div>
+      </Modal>
     </>
   );
 }

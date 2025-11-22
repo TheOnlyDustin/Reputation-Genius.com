@@ -118,10 +118,10 @@ export default function ContactPage() {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
-    { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
-    { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
-    { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' }
+    { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Facebook' },
+    { icon: <Twitter className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Twitter' },
+    { icon: <Linkedin className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'LinkedIn' },
+    { icon: <Instagram className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Instagram' }
   ];
 
   return (
@@ -219,17 +219,19 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Location Info */}
               <div className="card">
                 <h3 className="text-xl font-semibold mb-6">Our Location</h3>
-                <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                    <p className="text-text-secondary">Interactive map coming soon</p>
-                    <p className="text-sm text-text-secondary mt-1">
-                      Serving businesses nationwide
-                    </p>
+                <div className="bg-gray-50 rounded-lg p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                    <MapPin className="h-8 w-8 text-primary" />
                   </div>
+                  <h4 className="text-lg font-semibold text-text-primary mb-2">
+                    Headquarters
+                  </h4>
+                  <p className="text-text-secondary max-w-xs mx-auto">
+                    Based in West Springfield, MA, we serve clients across the entire United States.
+                  </p>
                 </div>
               </div>
             </div>

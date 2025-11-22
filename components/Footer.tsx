@@ -142,16 +142,16 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-end gap-4">
               {/* Social Media Icons */}
               <div className="flex space-x-6">
-                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Facebook">
+                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Facebook">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Twitter">
+                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Twitter">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="LinkedIn">
+                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Instagram">
+                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Instagram">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>

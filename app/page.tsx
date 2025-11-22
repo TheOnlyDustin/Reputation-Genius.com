@@ -42,7 +42,7 @@ export default function Home() {
     {
       icon: <MessageSquare className="h-6 w-6 text-white" />,
       title: 'Unified Messaging',
-      description: 'All your customer conversations in one inbox. Facebook, SMS, Email, and more.',
+      description: 'All your customer conversations in one inbox. Facebook, Web Chat, SMS, Email, and more.',
       href: '/services/messaging',
       color: 'bg-indigo-500',
       colSpan: 'md:col-span-1',
