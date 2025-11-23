@@ -13,6 +13,7 @@ import {
   Globe
 } from 'lucide-react';
 import Modal from '@/components/Modal';
+import AIChatbotIframe from '@/components/AIChatbotIframe';
 
 export default function WebchatPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -77,16 +78,7 @@ export default function WebchatPage() {
                   title="Experience Our AI Webchat"
                 >
                   <div className="w-full h-[600px] md:h-[500px]">
-                    <iframe
-                      src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
-                      width="100%"
-                      height="100%"
-                      className="border-0 rounded-lg"
-                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-                      allow="camera *; microphone *; geolocation *"
-                      title="Webchat Demo"
-                      loading="lazy"
-                    />
+                    <AIChatbotIframe />
                   </div>
                 </Modal>
               </div>

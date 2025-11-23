@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 
 import Modal from '@/components/Modal';
+import AIChatbotIframe from '@/components/AIChatbotIframe';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -218,16 +219,7 @@ export default function Home() {
                   title="Experience Our AI Webchat"
                 >
                   <div className="w-full h-[600px] md:h-[500px]">
-                    <iframe
-                      src="https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app?survey=31ab27a7-c37f-42b4-94b0-567dbd5b70f5"
-                      width="100%"
-                      height="100%"
-                      className="border-0 rounded-lg"
-                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-                      allow="camera *; microphone *; geolocation *"
-                      title="Webchat Demo"
-                      loading="lazy"
-                    />
+                    <AIChatbotIframe />
                   </div>
                 </Modal>
               </div>
@@ -433,8 +425,8 @@ export default function Home() {
             {/* Clio */}
             <div className="w-12 h-12 flex items-center justify-center" aria-label="Clio">
               <svg viewBox="0 0 32 32" className="w-full h-full fill-current text-[#0066CC]">
-                <rect x="4" y="4" width="24" height="24" rx="4" ry="4" fill="currentColor"/>
-                <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="4" y="4" width="24" height="24" rx="4" ry="4" fill="currentColor" />
+                <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
             {/* Google */}

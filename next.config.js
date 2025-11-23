@@ -6,7 +6,7 @@ const cspDirectives = [
   "font-src 'self' data:",
   "media-src 'self' https://storage.googleapis.com",
   "connect-src 'self' https://vitals.vercel-insights.com https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app/api/*",
-  "frame-src https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app https://link.reputation-genius.com",
+  "frame-src https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app https://link.reputation-genius.com https://pulseai.synapsescode.com",
   "frame-ancestors https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app",
 ].join('; ');
 
@@ -29,7 +29,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app"), microphone=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app"), geolocation=(self "https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app")',
+    value: 'camera=(), microphone=(), geolocation=()',
   },
   {
     key: 'X-DNS-Prefetch-Control',
