@@ -148,7 +148,7 @@ export default function AIMarketingPage() {
                 Never Lose Another Lead Or Customer Again
               </p>
             </div>
-            <div className="relative hidden lg:block">
+            <div className="relative block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
                 <video
