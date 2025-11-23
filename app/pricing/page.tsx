@@ -290,46 +290,46 @@ export default function PricingPage() {
             See exactly what's included in each plan
           </p>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full bg-white rounded-lg shadow-md">
+        <div className="w-full">
+          <table className="w-full bg-white rounded-lg shadow-md table-fixed">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left p-6 font-semibold">Features</th>
-                <th className="text-center p-6 font-semibold">Essentials</th>
-                <th className="text-center p-6 font-semibold">Professional</th>
-                <th className="text-center p-6 font-semibold">Platinum</th>
+                <th className="text-left p-2 md:p-6 font-semibold text-xs md:text-base w-[34%] md:w-auto">Features</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Essentials</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Professional</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Platinum</th>
               </tr>
             </thead>
             <tbody>
               {comparisonFeatures.map((category, categoryIndex) => (
                 <React.Fragment key={categoryIndex}>
                   <tr className="border-b border-border bg-gray-50">
-                    <td colSpan={4} className="p-4 font-semibold text-text-primary">
+                    <td colSpan={4} className="p-2 md:p-4 font-semibold text-text-primary text-xs md:text-base">
                       {category.category}
                     </td>
                   </tr>
                   {category.features.map((feature, featureIndex) => (
                     <tr key={featureIndex} className="border-b border-border">
-                      <td className="p-6 text-sm">{feature.name}</td>
-                      <td className="p-6 text-center">
+                      <td className="p-2 md:p-6 text-xs md:text-sm">{feature.name}</td>
+                      <td className="p-1 md:p-6 text-center">
                         {typeof feature.essentials === 'boolean' ? (
-                          feature.essentials ? <CheckCircle className="h-5 w-5 text-green-500 mx-auto" /> : <span className="text-gray-400">—</span>
+                          feature.essentials ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
                         ) : (
-                          <span className="text-sm font-medium">{feature.essentials}</span>
+                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.essentials}</span>
                         )}
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-1 md:p-6 text-center">
                         {typeof feature.professional === 'boolean' ? (
-                          feature.professional ? <CheckCircle className="h-5 w-5 text-green-500 mx-auto" /> : <span className="text-gray-400">—</span>
+                          feature.professional ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
                         ) : (
-                          <span className="text-sm font-medium">{feature.professional}</span>
+                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.professional}</span>
                         )}
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-1 md:p-6 text-center">
                         {typeof feature.platinum === 'boolean' ? (
-                          feature.platinum ? <CheckCircle className="h-5 w-5 text-green-500 mx-auto" /> : <span className="text-gray-400">—</span>
+                          feature.platinum ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
                         ) : (
-                          <span className="text-sm font-medium">{feature.platinum}</span>
+                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.platinum}</span>
                         )}
                       </td>
                     </tr>
