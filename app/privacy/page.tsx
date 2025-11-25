@@ -51,12 +51,12 @@ export default function PrivacyPage() {
           </ul>
 
           <h3 className="text-2xl font-semibold mb-4 text-text-primary">Cookies and Tracking Technologies</h3>
-          <p className="mb-4">We use cookies and similar technologies to enhance your experience:</p>
+          <p className="mb-4">We use cookies and similar technologies to enhance your experience. Specifically, we utilize the following tools:</p>
           <ul className="list-disc pl-6 mb-6">
-            <li><strong>Essential Cookies:</strong> Required for basic platform functionality</li>
-            <li><strong>Analytics Cookies:</strong> Help us understand how you use our services</li>
-            <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements</li>
-            <li><strong>Third-Party Cookies:</strong> From integrated services like Google Analytics</li>
+            <li><strong>Google Tag Manager & Analytics:</strong> To understand website traffic and user behavior.</li>
+            <li><strong>Facebook Pixel:</strong> To measure the effectiveness of our advertising.</li>
+            <li><strong>Bing Webmaster Tools:</strong> To monitor and maintain our site's presence in Bing search results.</li>
+            <li><strong>Microsoft Clarity:</strong> To understand how users interact with our website through heatmaps and session recordings.</li>
           </ul>
           <p className="mb-6">
             You can control cookie preferences through your browser settings, though disabling certain cookies may affect platform functionality.
@@ -73,6 +73,9 @@ export default function PrivacyPage() {
             <li>Comply with legal obligations and enforce our terms of service</li>
             <li>Send marketing communications (with your consent where required)</li>
           </ul>
+          <p className="mb-6">
+            <strong>Important:</strong> We don't sell, share, or do anything with the data other than review it for breaks in our site, and seeing how we can improve the user experience.
+          </p>
 
           <h2 className="text-3xl font-bold mb-6 text-text-primary">Information Sharing and Disclosure</h2>
           <p className="mb-4">We may share your information in the following circumstances:</p>
@@ -85,6 +88,11 @@ export default function PrivacyPage() {
           </ul>
           <p className="mb-6">
             We do not sell your personal information to third parties for marketing purposes.
+          </p>
+
+          <h2 className="text-3xl font-bold mb-6 text-text-primary">Data Retention</h2>
+          <p className="mb-6">
+            The data expires and is removed in accordance with our third-party providers (Google, Facebook, Microsoft). We do not adjust the duration of time the data is retained from the default setting to ensure compliancy.
           </p>
 
           <h2 className="text-3xl font-bold mb-6 text-text-primary">Data Security</h2>
@@ -134,7 +142,7 @@ export default function PrivacyPage() {
             <li><strong>Payment Processors:</strong> Secure payment processing services</li>
             <li><strong>Communication Platforms:</strong> Facebook Messenger, Google Business Messages, SMS providers</li>
             <li><strong>Business Tools:</strong> QuickBooks, Clio, Zapier, and other integrations</li>
-            <li><strong>Analytics:</strong> Google Analytics and similar services</li>
+            <li><strong>Analytics & Tracking:</strong> Google Analytics, Google Tag Manager, Facebook Pixel, Bing Webmaster Tools, Microsoft Clarity</li>
           </ul>
           <p className="mb-6">
             These third parties have their own privacy policies, and we encourage you to review them. We only share necessary information for service functionality.
@@ -158,8 +166,8 @@ export default function PrivacyPage() {
             <p className="mb-2"><strong>Reputation Genius, LLC</strong></p>
             <p className="mb-2">Email: privacy@reputation-genius.com</p>
             <p className="mb-2">Website: reputation-genius.com</p>
-            <p className="mb-2">Phone: [Contact phone number]</p>
-            <p>Address: [Business address]</p>
+            <p className="mb-2">Phone: (413) 314-2553</p>
+            <p>Address: West Springfield, MA</p>
           </div>
           <p className="mt-6">
             We are committed to addressing your privacy concerns and will respond to inquiries within a reasonable timeframe.

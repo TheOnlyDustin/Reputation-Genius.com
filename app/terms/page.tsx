@@ -138,6 +138,7 @@ export default function TermsPage() {
             <li><strong>Zapier:</strong> Workflow automation</li>
             <li><strong>Facebook:</strong> Social media and messaging</li>
             <li><strong>QuickBooks:</strong> Accounting and financial management</li>
+            <li><strong>Analytics & Tracking:</strong> Google Tag Manager, Google Analytics, Facebook Pixel, Bing Webmaster Tools, Microsoft Clarity</li>
           </ul>
           <p className="mb-6">
             You are responsible for maintaining valid accounts with these third-party services and complying with their terms. We are not liable for issues arising from third-party service disruptions or policy changes. Data synchronization may be subject to limitations imposed by these services.
@@ -179,7 +180,7 @@ export default function TermsPage() {
             <p className="mb-2">Email: legal@reputation-genius.com</p>
             <p className="mb-2">Website: reputation-genius.com</p>
             <p className="mb-2">Phone: (413) 314-2553</p>
-            <p>Address: Phoenix, Arizona</p>
+            <p>Address: West Springfield, MA</p>
           </div>
           <p className="mt-6">
             These Terms & Conditions constitute the entire agreement between you and Reputation Genius, LLC regarding the use of our Services.

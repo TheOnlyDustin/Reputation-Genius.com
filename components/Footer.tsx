@@ -23,7 +23,6 @@ const Footer = () => {
     { name: 'Pricing', href: '/pricing' },
     { name: 'Book a Demo', href: '/demo' },
     { name: 'Help Center', href: '#' },
-    { name: 'System Status', href: '#' },
   ];
 
   const legal = [
