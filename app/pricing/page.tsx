@@ -1,7 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Modal from '@/components/Modal';
+import WebchatForm from '@/components/WebchatForm';
 import {
   CheckCircle,
   Star,
@@ -10,11 +12,12 @@ import {
   Users,
   Zap,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  DollarSign
 } from 'lucide-react';
-import BookDemoButton from '@/components/BookDemoButton';
 
 export default function PricingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pricingTiers = [
     {
       name: 'Essentials',
@@ -380,20 +383,51 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Not Sure Section */}
-      <section className="relative w-full max-w-none py-24 overflow-hidden">
+      {/* CTAs Section */}
+      <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Not sure which plan is right for you?
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Book a personalized demo and let our experts help you choose the perfect plan for your business needs.
+          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
+            Join thousands of businesses that have already discovered the power of AI-driven reputation management.
           </p>
-          <BookDemoButton className="btn-cta !bg-white !text-primary !hover:bg-gray-100" />
+          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              See AI in Action
+              <MessageSquare className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              Book a Call
+              <Phone className="ml-2 h-4 w-4" />
+            </a>
+            <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              View Pricing
+              <DollarSign className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Experience Our AI Webchat"
+      >
+        <div className="w-full h-[600px] md:h-[500px]">
+          <WebchatForm />
+        </div>
+      </Modal>
     </>
   );
 }
