@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 const Footer = () => {
   const company = [
@@ -97,12 +98,19 @@ const Footer = () => {
             <ul className="space-y-3">
               {resources.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="hover:text-secondary transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.name === 'Book a Demo' ? (
+                    <BookDemoButton
+                      text={item.name}
+                      className="hover:text-secondary transition-colors text-sm"
+                    />
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="hover:text-secondary transition-colors text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

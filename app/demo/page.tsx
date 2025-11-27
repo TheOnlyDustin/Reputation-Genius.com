@@ -8,6 +8,7 @@ import {
   Bot,
   Clock
 } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function DemoPage() {
   const benefits = [
@@ -87,15 +88,11 @@ export default function DemoPage() {
               <p className="text-xl text-text-secondary mb-8">
                 Book a time directly on our calendar to speak with a reputation specialist.
               </p>
-              <a
-                href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cta text-lg px-8 py-4 inline-flex items-center"
-              >
-                Book Your Demo Now
-                <Clock className="ml-2 h-5 w-5" />
-              </a>
+              <BookDemoButton
+                text="Book Your Demo Now"
+                icon={<Clock className="ml-2 h-5 w-5" />}
+                className="btn-cta text-lg px-8 py-4 items-center"
+              />
             </div>
 
             {/* Alternative CTA */}

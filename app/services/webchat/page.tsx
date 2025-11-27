@@ -13,7 +13,7 @@ import {
   Globe
 } from 'lucide-react';
 import Modal from '@/components/Modal';
-import AIChatbotIframe from '@/components/AIChatbotIframe';
+import WebchatForm from '@/components/WebchatForm';
 
 export default function WebchatPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,7 +78,7 @@ export default function WebchatPage() {
                   title="Experience Our AI Webchat"
                 >
                   <div className="w-full h-[600px] md:h-[500px]">
-                    <AIChatbotIframe />
+                    <WebchatForm />
                   </div>
                 </Modal>
               </div>

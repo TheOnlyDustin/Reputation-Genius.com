@@ -5,9 +5,8 @@ const cspDirectives = [
   "img-src 'self' data: https:",
   "font-src 'self' data:",
   "media-src 'self' https://storage.googleapis.com",
-  "connect-src 'self' https://vitals.vercel-insights.com https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app/api/*",
-  "frame-src https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app https://link.reputation-genius.com https://pulseai.synapsescode.com",
-  "frame-ancestors https://pulseai-survey-5t0ediirt-tzb02s-projects.vercel.app",
+  "connect-src 'self' https://vitals.vercel-insights.com",
+  "frame-src https://link.reputation-genius.com",
 ].join('; ');
 
 const securityHeaders = [
@@ -40,7 +39,7 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['storage.googleapis.com'],
+
     remotePatterns: [
       {
         protocol: 'https',

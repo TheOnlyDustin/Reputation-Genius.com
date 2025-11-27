@@ -95,10 +95,10 @@ const Navigation = () => {
 
             {/* CTA Button */}
             <a
-              href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cta !px-6 !py-2.5 !text-base !bg-primary-gradient hover:!shadow-glow"
+              className="btn-cta !px-6 !py-2.5 !text-base !bg-primary-gradient hover:!shadow-glow inline-flex items-center justify-center"
             >
               Book a Demo
             </a>
@@ -177,13 +177,15 @@ const Navigation = () => {
               About Us
             </Link>
 
-            <Link
-              href="/demo"
-              className="block btn-cta text-center !w-full mt-4"
+            <a
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta text-center !w-full mt-4 inline-flex items-center justify-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Book a Demo
-            </Link>
+            </a>
           </div>
         </div>
       </div>

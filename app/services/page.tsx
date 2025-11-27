@@ -8,6 +8,7 @@ import {
   Zap,
   ArrowRight
 } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function ServicesPage() {
   const services = [
@@ -91,9 +92,7 @@ export default function ServicesPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Book a personalized demo and let our experts help you choose the perfect services for your business needs.
           </p>
-          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-block">
-            Book a Demo
-          </Link>
+          <BookDemoButton className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" />
         </div>
       </section>
     </>

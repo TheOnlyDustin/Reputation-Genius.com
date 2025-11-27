@@ -13,6 +13,7 @@ import {
   Eye,
   Filter
 } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function CRMPage() {
   const features = [
@@ -237,13 +238,10 @@ export default function CRMPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Start tracking leads and building relationships with our complete CRM solution.
           </p>
-          <Link
-            href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
-            className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center"
-          >
-            Book a Demo
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          <BookDemoButton
+            className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 items-center"
+            icon={<ArrowRight className="ml-2 h-5 w-5" />}
+          />
         </div>
       </section>
     </>

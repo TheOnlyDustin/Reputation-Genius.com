@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Modal from '@/components/Modal';
-import AIChatbotIframe from '@/components/AIChatbotIframe';
+import WebchatForm from '@/components/WebchatForm';
+import BookDemoButton from '@/components/BookDemoButton';
 import {
   Target,
   Users,
@@ -378,9 +379,7 @@ export default function AboutPage() {
             <Link href="/services" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
               See How We Can Help
             </Link>
-            <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300">
-              Book a Demo
-            </Link>
+            <BookDemoButton className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300" />
           </div>
         </div>
       </section>
@@ -399,7 +398,7 @@ export default function AboutPage() {
         title="Experience Our AI Webchat"
       >
         <div className="w-full h-[600px] md:h-[500px]">
-          <AIChatbotIframe />
+          <WebchatForm />
         </div>
       </Modal>
     </>

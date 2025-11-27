@@ -11,6 +11,7 @@ import {
   Shield,
   Clock
 } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function ReviewManagementPage() {
   const features = [
@@ -281,10 +282,10 @@ export default function ReviewManagementPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join thousands of businesses using Reputation Genius to collect more reviews and build trust with customers.
           </p>
-          <Link href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center">
-            Book a Demo
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          <BookDemoButton
+            className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 items-center"
+            icon={<ArrowRight className="ml-2 h-5 w-5" />}
+          />
         </div>
       </section>
     </>

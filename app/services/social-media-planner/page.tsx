@@ -9,6 +9,7 @@ import {
     CheckCircle,
     ArrowRight
 } from 'lucide-react';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function SocialMediaPlannerPage() {
     const features = [
@@ -61,14 +62,7 @@ export default function SocialMediaPlannerPage() {
                         Maintain consistent online presence without the daily hassle. Automate your social media posting to attract more local customers.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-cta"
-                        >
-                            Book a Demo
-                        </a>
+                        <BookDemoButton className="btn-cta" />
                         <Link href="/pricing" className="btn-secondary">
                             View Pricing
                         </Link>
@@ -184,14 +178,9 @@ export default function SocialMediaPlannerPage() {
                         Join hundreds of businesses growing their audience and driving foot traffic with our Social Media Planner.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <a
-                            href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <BookDemoButton
                             className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                        >
-                            Book a Demo
-                        </a>
+                        />
                         <Link
                             href="/pricing"
                             className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300"

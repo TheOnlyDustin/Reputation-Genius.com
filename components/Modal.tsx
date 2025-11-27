@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 interface ModalProps {
@@ -10,6 +11,12 @@ interface ModalProps {
 
 export default function Modal({ isOpen, onClose, children, title }: ModalProps) {
     const modalRef = useRef<HTMLDivElement>(null);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
     useEffect(() => {
         const handleEscape = (event: KeyboardEvent) => {
@@ -29,7 +36,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
         };
     }, [isOpen, onClose]);
 
-    if (!isOpen) return null;
+    if (!isOpen || !mounted) return null;
 
     const handleBackdropClick = (e: React.MouseEvent) => {
         if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
@@ -37,9 +44,9 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
         }
     };
 
-    return (
+    return createPortal(
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200"
             onClick={handleBackdropClick}
         >
             <div
@@ -62,6 +69,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                     {children}
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }

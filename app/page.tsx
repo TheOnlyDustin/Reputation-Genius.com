@@ -15,11 +15,12 @@ import {
   Shield,
   TrendingUp,
   Globe,
-  DollarSign
+  DollarSign,
+  X
 } from 'lucide-react';
 
-import Modal from '@/components/Modal';
-import AIChatbotIframe from '@/components/AIChatbotIframe';
+import WebchatForm from '@/components/WebchatForm';
+import BookDemoButton from '@/components/BookDemoButton';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -201,7 +202,7 @@ export default function Home() {
                   <MessageSquare className="ml-2 h-4 w-4" />
                 </button>
                 <a
-                  href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
+                  href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -213,15 +214,7 @@ export default function Home() {
                   View Pricing
                   <DollarSign className="ml-2 h-4 w-4" />
                 </Link>
-                <Modal
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  title="Experience Our AI Webchat"
-                >
-                  <div className="w-full h-[600px] md:h-[500px]">
-                    <AIChatbotIframe />
-                  </div>
-                </Modal>
+
               </div>
               <div className="mt-4 md:mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
                 <div className="flex items-center">
@@ -478,14 +471,9 @@ export default function Home() {
             Join hundreds of businesses protecting their brand and growing their revenue with Reputation Genius.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
-              href="https://link.reputation-genius.com/widget/booking/tzA2IS1l19is03M4ufft"
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookDemoButton
               className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              Book a Demo
-            </a>
+            />
             <Link
               href="/pricing"
               className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300"
@@ -509,6 +497,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Custom Webchat Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
+              aria-label="Close modal"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="w-full h-full">
+              <WebchatForm />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
