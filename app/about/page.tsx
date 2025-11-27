@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Modal from '@/components/Modal';
 import WebchatForm from '@/components/WebchatForm';
-import BookDemoButton from '@/components/BookDemoButton';
+
 import {
   Target,
   Users,
@@ -17,7 +17,9 @@ import {
   Zap,
   Globe,
   Clock,
-  MessageSquare
+  MessageSquare,
+  Phone,
+  DollarSign
 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -375,11 +377,27 @@ export default function AboutPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join thousands of businesses that have already discovered the power of AI-driven reputation management.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/services" className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-              See How We Can Help
+          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              See AI in Action
+              <MessageSquare className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              Book a Call
+              <Phone className="ml-2 h-4 w-4" />
+            </a>
+            <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              View Pricing
+              <DollarSign className="ml-2 h-4 w-4" />
             </Link>
-            <BookDemoButton className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300" />
           </div>
         </div>
       </section>
