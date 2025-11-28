@@ -110,13 +110,13 @@ export default function AboutPage() {
 
   const stats = [
     {
-      number: "10,000+",
-      label: "Businesses Served",
+      number: "121",
+      label: "Businesses served",
       icon: <Users className="h-8 w-8 text-primary" />
     },
     {
-      number: "500K+",
-      label: "Reviews Managed",
+      number: "63,500",
+      label: "reviews managed",
       icon: <Star className="h-8 w-8 text-primary" />
     },
     {

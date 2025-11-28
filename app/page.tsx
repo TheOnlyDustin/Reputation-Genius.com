@@ -216,16 +216,6 @@ export default function Home() {
                 </Link>
 
               </div>
-              <div className="mt-4 md:mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-                  No credit card required
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-                  14-day free trial
-                </div>
-              </div>
             </div>
             <div className="relative hidden lg:block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -348,6 +338,9 @@ export default function Home() {
             </h2>
             <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Choose the plan that fits your growth stage. No hidden fees.
+            </p>
+            <p className="text-center text-neutral-400 text-sm max-w-2xl mx-auto mt-4">
+              We offer a 14-day free trial, but a credit card is required to activate it. We had to implement this measure once AI became so prevalent to prevent spam and AI-generated accounts. We apologize for this necessary step and appreciate your understanding.
             </p>
           </div>
 

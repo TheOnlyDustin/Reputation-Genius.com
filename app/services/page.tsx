@@ -10,7 +10,8 @@ import {
   Zap,
   ArrowRight,
   DollarSign,
-  X
+  X,
+  Globe
 } from 'lucide-react';
 import WebchatForm from '@/components/WebchatForm';
 
@@ -22,6 +23,12 @@ export default function ServicesPage() {
       title: 'Review Management',
       description: 'Automatically collect, respond to, and showcase 5-star reviews across all platforms. Never lose another customer to poor reviews.',
       href: '/services/review-management',
+    },
+    {
+      icon: <Globe className="h-8 w-8 text-accent" />,
+      title: 'Social Media Planner',
+      description: 'Plan and schedule posts effortlessly across all major platforms to keep your business active.',
+      href: '/services/social-media-planner',
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-accent" />,
