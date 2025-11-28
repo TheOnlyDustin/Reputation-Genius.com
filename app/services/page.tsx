@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Star,
@@ -6,11 +8,14 @@ import {
   Phone,
   Users,
   Zap,
-  ArrowRight
+  ArrowRight,
+  DollarSign,
+  X
 } from 'lucide-react';
-import BookDemoButton from '@/components/BookDemoButton';
+import WebchatForm from '@/components/WebchatForm';
 
 export default function ServicesPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
       icon: <Star className="h-8 w-8 text-accent" />,
@@ -55,6 +60,28 @@ export default function ServicesPage() {
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
             Comprehensive reputation management solutions that protect and grow your business. From automated reviews to AI-powered customer engagement.
           </p>
+          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row mt-8">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              See AI in Action
+              <MessageSquare className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              Book a Call
+              <Phone className="ml-2 h-4 w-4" />
+            </a>
+            <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              View Pricing
+              <DollarSign className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -92,9 +119,54 @@ export default function ServicesPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Book a personalized demo and let our experts help you choose the perfect services for your business needs.
           </p>
-          <BookDemoButton className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" />
+          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              See AI in Action
+              <MessageSquare className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+            >
+              Book a Call
+              <Phone className="ml-2 h-4 w-4" />
+            </a>
+            <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              View Pricing
+              <DollarSign className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* Custom Webchat Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
+              aria-label="Close modal"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="w-full h-full">
+              <WebchatForm />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
