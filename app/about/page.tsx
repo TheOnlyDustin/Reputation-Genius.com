@@ -402,14 +402,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer Note */}
-      <section className="bg-white py-8 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-text-secondary">
-            Copyright Reputation Genius, LLC 2025 — All Rights Reserved | We're on a mission to build a better future where technology reviews good jobs for everyone.
-          </p>
-        </div>
-      </section>
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

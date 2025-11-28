@@ -56,13 +56,7 @@ const nextConfig = {
       },
     ];
   },
-  webpack: (config, { dev }) => {
-    if (dev) {
-      // Avoid eval-based source maps so CSP can remain strict in development.
-      config.devtool = 'source-map';
-    }
-    return config;
-  },
+
 };
 
 module.exports = nextConfig;

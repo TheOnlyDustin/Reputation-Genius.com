@@ -419,7 +419,7 @@ export default function Home() {
             <div className="w-12 h-12 flex items-center justify-center" aria-label="Clio">
               <svg viewBox="0 0 32 32" className="w-full h-full fill-current text-[#0066CC]">
                 <rect x="4" y="4" width="24" height="24" rx="4" ry="4" fill="currentColor" />
-                <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 14l4 4 8-8" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             {/* Google */}

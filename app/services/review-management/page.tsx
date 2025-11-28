@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Star,
@@ -9,11 +11,19 @@ import {
   Zap,
   TrendingUp,
   Shield,
-  Clock
+  Clock,
+  Phone,
+  Users,
+  Globe,
+  DollarSign,
+  X
 } from 'lucide-react';
 import BookDemoButton from '@/components/BookDemoButton';
+import WebchatForm from '@/components/WebchatForm';
 
 export default function ReviewManagementPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const features = [
     {
       icon: <Star className="h-8 w-8 text-accent" />,
@@ -123,15 +133,83 @@ export default function ReviewManagementPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section className="bg-white !pt-24 !pb-12">
-        <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            Automated Review Management
-          </h1>
-          <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Get More 5-Star Reviews Automatically
-          </p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-hero-gradient pt-12 md:pt-20 pb-16 md:pb-32">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="section-container relative z-10 !py-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-primary font-medium text-sm mb-3 md:mb-6 border border-blue-100">
+                <Star className="h-4 w-4 mr-2 fill-current" />
+                Trusted by 500+ Local Businesses
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-text-primary">
+                Automated Review <span className="text-gradient">Management</span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed">
+                Get More 5-Star Reviews Automatically.
+              </p>
+              <div className="relative lg:hidden mb-8">
+                <div className="absolute -inset-3 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
+                  >
+                    <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3 justify-center items-center lg:flex-row lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+                >
+                  See AI in Action
+                  <MessageSquare className="ml-2 h-4 w-4" />
+                </button>
+                <a
+                  href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+                >
+                  Book a Call
+                  <Phone className="ml-2 h-4 w-4" />
+                </a>
+                <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                  View Pricing
+                  <DollarSign className="ml-2 h-4 w-4" />
+                </Link>
+
+              </div>
+              <div className="mt-4 md:mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-text-secondary">
+                <div className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
+                  No credit card required
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
+                  14-day free trial
+                </div>
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
+                >
+                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -288,6 +366,30 @@ export default function ReviewManagementPage() {
           />
         </div>
       </section>
+
+      {/* Custom Webchat Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
+              aria-label="Close modal"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="w-full h-full">
+              <WebchatForm />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
