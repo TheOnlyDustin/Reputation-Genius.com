@@ -165,7 +165,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-hero-gradient pt-12 md:pt-20 pb-16 md:pb-32">
+      <section className="relative overflow-hidden bg-hero-gradient pt-12 md:pt-20 pb-8 md:pb-32">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 !py-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -193,7 +193,7 @@ export default function Home() {
                   </video>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 justify-center items-center lg:flex-row lg:justify-start">
+              <div className="flex flex-col gap-4 justify-center items-center lg:flex-row lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -239,7 +239,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors">
+              <div key={index} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors text-center md:text-left">
                 <div className="mb-3 p-3 bg-neutral-100 rounded-full">
                   {stat.icon}
                 </div>
