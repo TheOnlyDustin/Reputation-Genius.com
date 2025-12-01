@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} font-sans bg-background text-text-primary antialiased`}>
         {process.env.NODE_ENV === 'production' && (
           <Script id="gtm" strategy="afterInteractive">
