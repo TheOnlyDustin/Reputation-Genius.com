@@ -162,7 +162,7 @@ export default function ReviewManagementPage() {
                   </video>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 justify-center items-center lg:flex-row lg:justify-start">
+              <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row lg:justify-start">
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -353,7 +353,7 @@ export default function ReviewManagementPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join thousands of businesses using Reputation Genius to collect more reviews and build trust with customers.
           </p>
-          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+          <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
             <button
               onClick={() => setIsModalOpen(true)}
               className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"

@@ -69,7 +69,7 @@ export default function SocialMediaPlannerPage() {
                     <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed max-w-3xl mx-auto">
                         Maintain consistent online presence without the daily hassle. Automate your social media posting to attract more local customers.
                     </p>
-                    <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+                    <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -201,7 +201,7 @@ export default function SocialMediaPlannerPage() {
                     <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
                         Join hundreds of businesses growing their audience and driving foot traffic with our Social Media Planner.
                     </p>
-                    <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+                    <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"

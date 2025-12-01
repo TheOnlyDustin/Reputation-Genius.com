@@ -67,7 +67,7 @@ export default function ServicesPage() {
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
             Comprehensive reputation management solutions that protect and grow your business. From automated reviews to AI-powered customer engagement.
           </p>
-          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row mt-8">
+          <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row mt-8">
             <button
               onClick={() => setIsModalOpen(true)}
               className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -126,7 +126,7 @@ export default function ServicesPage() {
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Book a personalized demo and let our experts help you choose the perfect services for your business needs.
           </p>
-          <div className="flex flex-col gap-3 justify-center items-center lg:flex-row">
+          <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
             <button
               onClick={() => setIsModalOpen(true)}
               className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
