@@ -7,7 +7,7 @@ import {
   Inbox,
   Zap,
   Smartphone,
-  ArrowRight,
+
   CheckCircle,
   Users,
   Clock,
@@ -18,7 +18,7 @@ import {
   X
 } from 'lucide-react';
 import WebchatForm from '@/components/WebchatForm';
-import BookDemoButton from '@/components/BookDemoButton';
+
 
 export default function MessagingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

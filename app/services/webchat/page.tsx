@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
+
 import {
   MessageSquare,
   Users,
@@ -9,7 +9,7 @@ import {
   Zap,
   ArrowRight,
   CheckCircle,
-  Smartphone,
+
   Globe
 } from 'lucide-react';
 import Modal from '@/components/Modal';

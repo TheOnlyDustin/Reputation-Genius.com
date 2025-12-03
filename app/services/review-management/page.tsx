@@ -7,18 +7,18 @@ import {
   MessageSquare,
   Share,
   CheckCircle,
-  ArrowRight,
+
   Zap,
   TrendingUp,
   Shield,
   Clock,
   Phone,
-  Users,
-  Globe,
+
+
   DollarSign,
   X
 } from 'lucide-react';
-import BookDemoButton from '@/components/BookDemoButton';
+
 import WebchatForm from '@/components/WebchatForm';
 
 export default function ReviewManagementPage() {

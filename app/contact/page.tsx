@@ -1,14 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import Script from 'next/script';
+
 import {
   Mail,
   Phone,
   Clock,
   MapPin,
-  Send,
-  CheckCircle,
+
   Facebook,
   Twitter,
   Linkedin,
@@ -16,85 +15,7 @@ import {
 } from 'lucide-react';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: ''
-  });
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    try {
-      // For now, just log the form data and show success
-      console.log('Contact form submitted:', formData);
-
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Form submission error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const contactInfo = [
     {
@@ -170,7 +91,7 @@ export default function ContactPage() {
                     id="rFzMVQiEGHyQG6Q9jIJK_1764281000534"
                   ></iframe>
                   <br />
-                  <script src="https://link.reputation-genius.com/js/form_embed.js" type="text/javascript"></script>
+                  <Script src="https://link.reputation-genius.com/js/form_embed.js" strategy="lazyOnload" />
                 </div>
               </div>
             </div>

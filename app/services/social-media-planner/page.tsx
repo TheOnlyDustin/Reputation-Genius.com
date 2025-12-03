@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Calendar,
     Clock,
@@ -9,14 +10,14 @@ import {
     BarChart,
     Target,
     CheckCircle,
-    ArrowRight,
+
     MessageSquare,
     Phone,
     DollarSign,
     X
 } from 'lucide-react';
 import WebchatForm from '@/components/WebchatForm';
-import BookDemoButton from '@/components/BookDemoButton';
+
 
 export default function SocialMediaPlannerPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -122,9 +123,11 @@ export default function SocialMediaPlannerPage() {
                         <div className="relative">
                             <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-3xl opacity-30"></div>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
-                                <img
+                                <Image
                                     src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
                                     alt="Social Media Scheduler Interface"
+                                    width={800}
+                                    height={600}
                                     className="w-full h-auto"
                                 />
                             </div>

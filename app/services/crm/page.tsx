@@ -3,13 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Users,
+
   TrendingUp,
   Upload,
-  Download,
+
   BarChart3,
   Target,
-  ArrowRight,
+
   CheckCircle,
   Database,
   Eye,
@@ -20,7 +20,7 @@ import {
   X
 } from 'lucide-react';
 import WebchatForm from '@/components/WebchatForm';
-import BookDemoButton from '@/components/BookDemoButton';
+
 
 export default function CRMPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

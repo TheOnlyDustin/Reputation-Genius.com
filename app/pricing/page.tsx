@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import Modal from '@/components/Modal';
 import WebchatForm from '@/components/WebchatForm';
 import {
   CheckCircle,
-  Star,
+
   MessageSquare,
   Phone,
-  Users,
-  Zap,
+
   ChevronDown,
   ChevronUp,
   DollarSign
@@ -180,7 +179,7 @@ export default function PricingPage() {
     }
   ];
 
-  const [openFaq, setOpenFaq] = React.useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -305,8 +304,8 @@ export default function PricingPage() {
               </tr>
             </thead>
             <tbody>
-              {comparisonFeatures.map((category, categoryIndex) => (
-                <React.Fragment key={categoryIndex}>
+              {comparisonFeatures.map((category) => (
+                <Fragment key={category.category}>
                   <tr className="border-b border-border bg-gray-50">
                     <td colSpan={4} className="p-2 md:p-4 font-semibold text-text-primary text-xs md:text-base">
                       {category.category}
@@ -338,7 +337,7 @@ export default function PricingPage() {
                       </td>
                     </tr>
                   ))}
-                </React.Fragment>
+                </Fragment>
               ))}
             </tbody>
           </table>

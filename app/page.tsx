@@ -1,8 +1,8 @@
 
+
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 import {
   Star,
@@ -158,9 +158,7 @@ export default function Home() {
     }
   ];
 
-  const integrations = [
-    'Clio', 'Google', 'Zapier', 'Facebook', 'Quickbooks'
-  ];
+
 
   return (
     <>
@@ -300,7 +298,7 @@ export default function Home() {
             Three Steps to <span className="text-primary">Success</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            We've simplified reputation management so you can focus on running your business.
+            We&apos;ve simplified reputation management so you can focus on running your business.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto relative">

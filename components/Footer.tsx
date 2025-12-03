@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import BookDemoButton from '@/components/BookDemoButton';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '#' },
-    { name: 'Careers', href: '#' },
+    { name: 'Careers', href: 'https://careers.reputation-genius.com' },
   ];
 
   const services = [
@@ -23,7 +23,7 @@ const Footer = () => {
   const resources = [
     { name: 'Pricing', href: '/pricing' },
     { name: 'Book a Demo', href: '/demo' },
-    { name: 'Help Center', href: '#' },
+    { name: 'Compare Plans', href: '/pricing' },
   ];
 
   const legal = [
@@ -66,7 +66,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="hover:text-secondary transition-colors text-sm"
+                    className={`hover:text-secondary transition-colors text-sm ${item.name === 'Careers' ? 'text-neutral-900' : ''}`}
                   >
                     {item.name}
                   </Link>
@@ -142,7 +142,7 @@ const Footer = () => {
                 &copy; {new Date().getFullYear()} Reputation Genius, LLC. All Rights Reserved.
               </p>
               <p className="text-sm text-neutral-600 italic">
-                We're on a mission to build a better future where technology reviews good jobs for everyone.
+                We&apos;re on a mission to build a better future where technology reviews good jobs for everyone.
               </p>
             </div>
 

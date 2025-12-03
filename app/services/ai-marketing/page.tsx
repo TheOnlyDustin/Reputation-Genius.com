@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Zap,
+
   DollarSign,
   Clock,
   Target,
   TrendingUp,
   Crown,
   ArrowRight,
-  CheckCircle,
+
   Calculator,
   Users,
   BarChart3

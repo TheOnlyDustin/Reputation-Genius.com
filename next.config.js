@@ -1,11 +1,12 @@
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://link.reputation-genius.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://link.reputation-genius.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
+  "connect-src 'self' https://vitals.vercel-insights.com https://www.google-analytics.com https://www.facebook.com",
   "media-src 'self' https://storage.googleapis.com",
-  "connect-src 'self' https://vitals.vercel-insights.com",
+
   "frame-src https://link.reputation-genius.com",
 ].join('; ');
 

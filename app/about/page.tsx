@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Modal from '@/components/Modal';
 import WebchatForm from '@/components/WebchatForm';
 
@@ -268,7 +269,7 @@ export default function AboutPage() {
               <div key={index} className="card text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
                   {member.image.startsWith('http') ? (
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    <Image src={member.image} alt={member.name} width={96} height={96} className="w-full h-full object-cover" />
                   ) : (
                     <Users className="h-12 w-12 text-gray-400" />
                   )}
