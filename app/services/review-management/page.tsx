@@ -93,48 +93,7 @@ export default function ReviewManagementPage() {
     }
   ];
 
-  const pricingTiers = [
-    {
-      name: 'Essentials',
-      price: '$97',
-      period: '/month',
-      tagline: 'for emerging businesses just getting started',
-      reviewFeatures: [
-        'Get New Reviews Automatically',
-        'Auto-Request Reviews',
-        'Respond To Reviews In One Place',
-        'Review Sharing On Social Sites'
-      ],
-      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f?utm_source=website&utm_medium=cta&utm_campaign=review-management'
-    },
-    {
-      name: 'Professional',
-      price: '$297',
-      period: '/month',
-      tagline: 'for established businesses looking to grow',
-      badge: 'MOST POPULAR',
-      reviewFeatures: [
-        'All Essentials Review Features',
-        'Advanced Analytics & Reporting',
-        'Priority Review Response Alerts',
-        'Custom Review Request Templates'
-      ],
-      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996?utm_source=website&utm_medium=cta&utm_campaign=review-management'
-    },
-    {
-      name: 'Platinum',
-      price: '$497',
-      period: '/month',
-      tagline: 'for businesses scaling rapidly',
-      reviewFeatures: [
-        'All Professional Review Features',
-        'AI-Powered Review Insights',
-        'Automated Review Translation',
-        'Competitor Review Monitoring'
-      ],
-      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936?utm_source=website&utm_medium=cta&utm_campaign=review-management'
-    }
-  ];
+
 
   return (
     <>
@@ -295,55 +254,36 @@ export default function ReviewManagementPage() {
         </div>
       </section>
 
-      {/* Pricing Tiers Section */}
+      {/* Availability Section */}
       <section className="bg-white">
         <div className="section-container">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <h2 className="heading-1">
-              Review Management Included In All Plans
+              Available In All Plans
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Choose the plan that fits your business needs. All plans include powerful review management features.
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+              Our automated review management system is included in every Reputation Genius plan, ensuring you can build trust and grow your business at any stage.
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {pricingTiers.map((tier, index) => (
-              <div key={index} className={`card flex flex-col h-full relative ${tier.badge ? 'border-2 border-primary' : ''}`}>
-                {tier.badge && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    {tier.badge}
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                  <div className="text-4xl font-bold text-primary mb-1">
-                    {tier.price}<span className="text-lg font-normal text-text-secondary">{tier.period}</span>
-                  </div>
-                  <p className="text-sm text-text-secondary">{tier.tagline}</p>
-                </div>
-                <div className="mb-8 flex-grow">
-                  <h4 className="font-semibold text-text-primary mb-4">Review Management Features:</h4>
-                  <ul className="space-y-3">
-                    {tier.reviewFeatures.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="icon-mini text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="text-center mt-auto">
-                  <a
-                    href={tier.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-cta w-full text-center block"
-                  >
-                    Get Started
-                  </a>
-                </div>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Essentials</p>
+                <p className="text-sm text-text-secondary">$97/month</p>
+                <p className="text-xs text-gray-500 mt-1">Included</p>
               </div>
-            ))}
+              <div className="text-center">
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Professional</p>
+                <p className="text-sm text-text-secondary">$297/month</p>
+                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
+              </div>
+              <div className="text-center">
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
+                <p className="font-semibold">Platinum</p>
+                <p className="text-sm text-text-secondary">$497/month</p>
+                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

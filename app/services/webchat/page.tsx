@@ -178,21 +178,24 @@ export default function WebchatPage() {
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
               Our conversion-focused webchat is included in every Reputation Genius plan, giving you the tools to turn visitors into customers at any level.
             </p>
-            <div className="flex items-center justify-center space-x-8">
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Essentials</p>
                 <p className="text-sm text-text-secondary">$97/month</p>
+                <p className="text-xs text-gray-500 mt-1">Included</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Professional</p>
                 <p className="text-sm text-text-secondary">$297/month</p>
+                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Platinum</p>
                 <p className="text-sm text-text-secondary">$497/month</p>
+                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
               </div>
             </div>
           </div>

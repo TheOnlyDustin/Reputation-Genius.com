@@ -10,7 +10,8 @@ import {
     CheckCircle,
 
     Phone,
-    DollarSign
+    DollarSign,
+    X
 } from 'lucide-react';
 import WebchatDemo from '@/components/WebchatDemo';
 
@@ -177,6 +178,42 @@ export default function SocialMediaPlannerPage() {
                             <div className="p-6 bg-neutral-50 rounded-xl border border-border">
                                 <div className="text-4xl font-bold text-primary mb-2">24/7</div>
                                 <div className="font-medium text-text-primary">Active Presence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Availability Section */}
+            <section className="bg-white">
+                <div className="section-container">
+                    <div className="text-center">
+                        <h2 className="heading-1">
+                            Plan Availability
+                        </h2>
+                        <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                            Our advanced social media planner is available in our Professional and Platinum plans, designed for businesses ready to scale their online presence.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                            <div className="text-center opacity-50">
+                                <div className="h-12 w-12 mx-auto mb-2 flex items-center justify-center">
+                                    <X className="h-8 w-8 text-gray-400" />
+                                </div>
+                                <p className="font-semibold">Essentials</p>
+                                <p className="text-sm text-text-secondary">$97/month</p>
+                                <p className="text-xs text-gray-500 mt-1">Not Available</p>
+                            </div>
+                            <div className="text-center">
+                                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
+                                <p className="font-semibold">Professional</p>
+                                <p className="text-sm text-text-secondary">$297/month</p>
+                                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
+                            </div>
+                            <div className="text-center">
+                                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
+                                <p className="font-semibold">Platinum</p>
+                                <p className="text-sm text-text-secondary">$497/month</p>
+                                <p className="text-xs text-green-600 font-medium mt-1">Included</p>
                             </div>
                         </div>
                     </div>
