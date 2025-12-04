@@ -1,6 +1,6 @@
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://link.reputation-genius.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://link.reputation-genius.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
@@ -40,7 +40,9 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: 'https',
@@ -49,6 +51,36 @@ const nextConfig = {
     ],
   },
   productionBrowserSourceMaps: false,
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Split vendor chunks
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 10,
+        },
+        // Split Lucide React icons into separate chunk
+        lucide: {
+          test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+          name: 'lucide-icons',
+          chunks: 'all',
+          priority: 20,
+        },
+        // Split React and React DOM
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react-vendor',
+          chunks: 'all',
+          priority: 30,
+        },
+      };
+    }
+
+    return config;
+  },
   async headers() {
     return [
       {

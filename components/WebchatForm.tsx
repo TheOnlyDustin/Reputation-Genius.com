@@ -6,7 +6,7 @@ export default function WebchatForm() {
         <>
             <iframe
                 src="https://link.reputation-genius.com/widget/form/kf7bMBAmVE9qkWHAZAyA"
-                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+                className="w-full h-full border-none rounded-[3px]"
                 id="inline-kf7bMBAmVE9qkWHAZAyA"
                 title="AI Callback Website Form"
             />

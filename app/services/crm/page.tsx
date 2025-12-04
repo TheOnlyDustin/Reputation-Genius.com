@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
 
@@ -14,29 +12,26 @@ import {
   Database,
   Eye,
   Filter,
-  MessageSquare,
   Phone,
-  DollarSign,
-  X
+  DollarSign
 } from 'lucide-react';
-import WebchatForm from '@/components/WebchatForm';
+import WebchatDemo from '@/components/WebchatDemo';
 
 
 export default function CRMPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const features = [
     {
-      icon: <TrendingUp className="h-8 w-8 text-accent" />,
+      icon: <TrendingUp className="icon-feature text-accent" />,
       title: 'Grow Your Audience & Track Lead Sources',
       description: 'Know exactly where your new leads are coming from with comprehensive tracking. Monitor lead generation across all channels including webchat, reviews, messaging, and more.'
     },
     {
-      icon: <Upload className="h-8 w-8 text-accent" />,
+      icon: <Upload className="icon-feature text-accent" />,
       title: 'Easily Import/Export Leads',
       description: 'Seamlessly import existing contacts from CSV files or export your lead data for backup and analysis. Full data portability with no vendor lock-in.'
     },
     {
-      icon: <Database className="h-8 w-8 text-accent" />,
+      icon: <Database className="icon-feature text-accent" />,
       title: 'UNLIMITED Leads/Contacts',
       description: 'Store unlimited leads and contacts in Professional and Platinum plans. Never worry about hitting contact limits as your business grows.'
     }
@@ -44,22 +39,22 @@ export default function CRMPage() {
 
   const capabilities = [
     {
-      icon: <BarChart3 className="h-8 w-8 text-accent" />,
+      icon: <BarChart3 className="icon-feature text-accent" />,
       title: 'Advanced Lead Analytics',
       description: 'Track lead conversion rates, source attribution, and customer journey analytics to optimize your marketing efforts.'
     },
     {
-      icon: <Target className="h-8 w-8 text-accent" />,
+      icon: <Target className="icon-feature text-accent" />,
       title: 'Lead Scoring & Segmentation',
       description: 'Automatically score leads based on engagement and behavior. Create targeted segments for personalized follow-up.'
     },
     {
-      icon: <Eye className="h-8 w-8 text-accent" />,
+      icon: <Eye className="icon-feature text-accent" />,
       title: 'Lead Activity Monitoring',
       description: 'Monitor all lead interactions across channels. See who opened emails, clicked links, or engaged with your content.'
     },
     {
-      icon: <Filter className="h-8 w-8 text-accent" />,
+      icon: <Filter className="icon-feature text-accent" />,
       title: 'Smart Lead Filtering',
       description: 'Filter and search leads by multiple criteria including source, engagement level, location, and custom tags.'
     }
@@ -121,32 +116,26 @@ export default function CRMPage() {
       {/* Header Section */}
       <section className="bg-white !pt-24 !pb-12">
         <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h1 className="heading-1">
             Complete CRM Solution
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
             Grow Your Audience & Track Every Lead
           </p>
           <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row mt-8">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-            >
-              See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
-            </button>
+            <WebchatDemo />
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=crm"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               Book a Call
-              <Phone className="ml-2 h-4 w-4" />
+              <Phone className="ml-2 icon-button" />
             </a>
             <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
               View Pricing
-              <DollarSign className="ml-2 h-4 w-4" />
+              <DollarSign className="ml-2 icon-button" />
             </Link>
           </div>
         </div>
@@ -156,7 +145,7 @@ export default function CRMPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Powerful CRM Features
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -183,7 +172,7 @@ export default function CRMPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               See Your Leads In Action
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -200,7 +189,7 @@ export default function CRMPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Advanced Lead Tracking
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -227,7 +216,7 @@ export default function CRMPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Available In All Plans
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
@@ -235,19 +224,19 @@ export default function CRMPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Essentials</p>
                 <p className="text-sm text-text-secondary">$97/month</p>
                 <p className="text-xs text-gray-500 mt-1">CRM Included</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Professional</p>
                 <p className="text-sm text-text-secondary">$297/month</p>
                 <p className="text-xs text-green-600 font-medium mt-1">UNLIMITED Contacts</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="icon-large text-green-500 mx-auto mb-2" />
                 <p className="font-semibold">Platinum</p>
                 <p className="text-sm text-text-secondary">$497/month</p>
                 <p className="text-xs text-green-600 font-medium mt-1">UNLIMITED Contacts</p>
@@ -262,59 +251,30 @@ export default function CRMPage() {
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Ready to Grow Your Audience?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Start tracking leads and building relationships with our complete CRM solution.
           </p>
           <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-            >
-              See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
-            </button>
+            <WebchatDemo className="bg-white text-primary hover:bg-blue-50" />
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=crm"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               Book a Call
-              <Phone className="ml-2 h-4 w-4" />
+              <Phone className="ml-2 icon-button" />
             </a>
             <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
               View Pricing
-              <DollarSign className="ml-2 h-4 w-4" />
+              <DollarSign className="ml-2 icon-button" />
             </Link>
           </div>
         </div>
       </section>
-      {/* Custom Webchat Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
-              aria-label="Close modal"
-            >
-              <X className="h-6 w-6" />
-            </button>
-            <div className="w-full h-full">
-              <WebchatForm />
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

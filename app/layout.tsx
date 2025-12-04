@@ -8,8 +8,8 @@ import { Analytics } from '@vercel/analytics/react'
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Reputation Genius - AI-Powered Reputation Management for Local Businesses',
@@ -75,7 +75,7 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-KW5ZJDR4"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            className="hidden invisible"
           />
         </noscript>
         <Navigation />

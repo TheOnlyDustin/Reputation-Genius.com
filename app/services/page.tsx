@@ -1,82 +1,75 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
-  Star,
   MessageSquare,
-  Phone,
+  BarChart,
+  MessageCircle,
+  Share2,
   Users,
-  Zap,
+  Bot,
   ArrowRight,
-  DollarSign,
-  X,
-  Globe
+  CheckCircle,
+  Phone,
+  DollarSign
 } from 'lucide-react';
-import WebchatForm from '@/components/WebchatForm';
+import WebchatDemo from '@/components/WebchatDemo';
+
 
 export default function ServicesPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
-      icon: <Star className="h-8 w-8 text-accent" />,
+      icon: <MessageCircle className="h-12 w-12 text-accent" />,
       title: 'Review Management',
-      description: 'Automatically collect, respond to, and showcase 5-star reviews across all platforms. Never lose another customer to poor reviews.',
-      href: '/services/review-management',
+      description: 'Automate review requests, monitor feedback across platforms, and showcase your best reviews to build trust.',
+      link: '/services/review-management'
     },
     {
-      icon: <Globe className="h-8 w-8 text-accent" />,
+      icon: <Share2 className="h-12 w-12 text-accent" />,
       title: 'Social Media Planner',
-      description: 'Plan and schedule posts effortlessly across all major platforms to keep your business active.',
-      href: '/services/social-media-planner',
+      description: 'Schedule posts, track engagement, and manage all your social accounts from a single dashboard.',
+      link: '/services/social-media-planner'
     },
     {
-      icon: <MessageSquare className="h-8 w-8 text-accent" />,
-      title: 'Messaging & Communication',
-      description: 'Unified communication platform that brings all customer conversations into one inbox. Facebook Messenger, email, SMS, and more.',
-      href: '/services/messaging',
+      icon: <Users className="h-12 w-12 text-accent" />,
+      title: 'Unified Messaging',
+      description: 'Consolidate emails, SMS, and social messages into one inbox for faster response times.',
+      link: '/services/messaging'
     },
     {
-      icon: <Phone className="h-8 w-8 text-accent" />,
-      title: 'Webchat Solutions',
-      description: 'Convert website visitors into customers with intelligent webchat that engages instantly and captures leads automatically.',
-      href: '/services/webchat',
-    },
-    {
-      icon: <Users className="h-8 w-8 text-accent" />,
+      icon: <BarChart className="h-12 w-12 text-accent" />,
       title: 'CRM & Lead Management',
-      description: 'Complete customer relationship management with unlimited leads, automated follow-ups, and powerful lead tracking.',
-      href: '/services/crm',
+      description: 'Track leads, manage customer relationships, and automate follow-ups to close more deals.',
+      link: '/services/crm'
     },
     {
-      icon: <Zap className="h-8 w-8 text-accent" />,
-      title: 'AI Marketing Automation',
-      description: 'AI-powered marketing automation that nurtures leads, reduces costs, and ensures you never lose another customer.',
-      href: '/services/ai-marketing',
+      icon: <Bot className="h-12 w-12 text-accent" />,
+      title: 'AI Marketing',
+      description: 'Leverage AI to optimize your marketing campaigns and generate high-quality content.',
+      link: '/services/ai-marketing'
     },
+    {
+      icon: <MessageSquare className="h-12 w-12 text-accent" />,
+      title: 'Webchat',
+      description: 'Convert website visitors into leads with an AI-powered chat widget that works 24/7.',
+      link: '/services/webchat'
+    }
   ];
 
   return (
     <>
-      {/* Header Section */}
+      {/* Hero Section */}
       <section className="bg-white !pt-24 !pb-12">
         <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            Our Services
+          <h1 className="heading-1">
+            Comprehensive Digital Solutions
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Comprehensive reputation management solutions that protect and grow your business. From automated reviews to AI-powered customer engagement.
+            Everything you need to grow your online presence and manage your reputation in one place.
           </p>
           <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row mt-8">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-            >
-              See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
-            </button>
+            <WebchatDemo />
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=services"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -92,50 +85,89 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Cards Section */}
-      <section className="">
+      {/* Services Grid */}
+      <section className="bg-background-alt">
         <div className="section-container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link key={index} href={service.href} className="card group hover:shadow-xl transition-shadow">
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              <div key={index} className="card group hover:shadow-xl transition-all duration-300">
+                <div className="mb-6">{service.icon}</div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-text-secondary mb-4">
+                <p className="text-text-secondary mb-6">
                   {service.description}
                 </p>
-                <div className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </Link>
+                <Link
+                  href={service.link}
+                  className="inline-flex items-center font-semibold text-primary hover:text-primary-dark transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Not Sure Section */}
+      {/* Why Choose Us Section */}
+      <section className="bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="heading-2">
+              Why Choose Reputation Genius?
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              We provide the tools and support you need to succeed in the digital landscape.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">All-in-One Platform</h3>
+              <p className="text-text-secondary">
+                Manage reviews, social media, messaging, and more from a single dashboard.
+              </p>
+            </div>
+            <div className="p-6">
+              <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Bot className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
+              <p className="text-text-secondary">
+                Leverage advanced AI to automate tasks and generate high-quality content.
+              </p>
+            </div>
+            <div className="p-6">
+              <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Expert Support</h3>
+              <p className="text-text-secondary">
+                Our team of experts is dedicated to helping you achieve your business goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-            Not sure which services you need?
+          <h2 className="heading-1">
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Book a personalized demo and let our experts help you choose the perfect services for your business needs.
+            Join thousands of businesses using Reputation Genius to grow their online presence.
           </p>
           <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-            >
-              See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
-            </button>
+            <WebchatDemo className="bg-white text-primary hover:bg-blue-50" />
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=services"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
@@ -150,30 +182,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Custom Webchat Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
-              aria-label="Close modal"
-            >
-              <X className="h-6 w-6" />
-            </button>
-            <div className="w-full h-full">
-              <WebchatForm />
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

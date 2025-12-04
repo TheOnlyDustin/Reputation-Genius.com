@@ -1,6 +1,7 @@
-'use client';
+
 
 import Script from 'next/script';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 import {
   Mail,
@@ -19,19 +20,19 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: <Mail className="h-6 w-6 text-accent" />,
+      icon: <Mail className="icon-small text-accent" />,
       label: 'Email',
       value: 'contact@reputation-genius.com',
       href: 'mailto:contact@reputation-genius.com'
     },
     {
-      icon: <Phone className="h-6 w-6 text-accent" />,
+      icon: <Phone className="icon-small text-accent" />,
       label: 'Phone',
       value: '1-413-798-8836',
       href: 'tel:14137988836'
     },
     {
-      icon: <Clock className="h-6 w-6 text-accent" />,
+      icon: <Clock className="icon-small text-accent" />,
       label: 'Business Hours',
       value: 'Mon-Fri: 9AM-6PM PST',
       href: null
@@ -39,10 +40,10 @@ export default function ContactPage() {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Facebook' },
-    { icon: <Twitter className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Twitter' },
-    { icon: <Linkedin className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'LinkedIn' },
-    { icon: <Instagram className="h-5 w-5" />, href: 'https://www.facebook.com/reputationgenius', label: 'Instagram' }
+    { icon: <Facebook className="icon-mini" />, href: 'https://www.facebook.com/reputationgenius', label: 'Facebook' },
+    { icon: <Twitter className="icon-mini" />, href: 'https://www.facebook.com/reputationgenius', label: 'Twitter' },
+    { icon: <Linkedin className="icon-mini" />, href: 'https://www.facebook.com/reputationgenius', label: 'LinkedIn' },
+    { icon: <Instagram className="icon-mini" />, href: 'https://www.facebook.com/reputationgenius', label: 'Instagram' }
   ];
 
   return (
@@ -50,7 +51,7 @@ export default function ContactPage() {
       {/* Header Section */}
       <section className="bg-white !pt-24 !pb-12">
         <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h1 className="heading-1">
             Get In Touch
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
@@ -66,14 +67,14 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="w-full">
               <div className="card">
-                <h2 className="text-2xl font-bold mb-6">Ready to see how an AI Employee can work in your business—today?</h2>
+                <h2 className="heading-2">Ready to see how an AI Employee can work in your business—today?</h2>
 
                 <div className="prose prose-lg text-text-secondary mb-8">
                   <p className="mb-4">
                     This 30–45 minute call is for business owners and teams who want to explore real implementation of AI in their business. You’ll meet with a reputation specialist to map your use cases, review best-fit workflows, and outline a fast path to launch.
                   </p>
 
-                  <h3 className="text-xl font-semibold text-text-primary mb-3">What we’ll cover</h3>
+                  <h3 className="heading-3">What we’ll cover</h3>
                   <ul className="list-disc pl-5 space-y-2 mb-6">
                     <li>Your goals, call volume, and lead flow</li>
                     <li>How the AI Employee answers, qualifies, and books on your behalf</li>
@@ -83,16 +84,18 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                <div className="w-full h-[800px] border-none overflow-hidden">
-                  <iframe
-                    src="https://link.reputation-genius.com/widget/booking/jBgO8Co4QAp0N8m1PW0i"
-                    style={{ width: '100%', border: 'none', overflow: 'hidden' }}
-                    scrolling="no"
-                    id="rFzMVQiEGHyQG6Q9jIJK_1764281000534"
-                  ></iframe>
-                  <br />
-                  <Script src="https://link.reputation-genius.com/js/form_embed.js" strategy="lazyOnload" />
-                </div>
+                <ErrorBoundary>
+                  <div className="w-full h-[800px] border-none overflow-hidden">
+                    <iframe
+                      src="https://link.reputation-genius.com/widget/booking/jBgO8Co4QAp0N8m1PW0i"
+                      className="w-full border-none overflow-hidden"
+                      scrolling="no"
+                      id="rFzMVQiEGHyQG6Q9jIJK_1764281000534"
+                    ></iframe>
+                    <br />
+                    <Script src="https://link.reputation-genius.com/js/form_embed.js" strategy="lazyOnload" />
+                  </div>
+                </ErrorBoundary>
               </div>
             </div>
 
@@ -100,7 +103,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Contact Info */}
               <div className="card h-full">
-                <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+                <h3 className="heading-3 mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start">
@@ -125,7 +128,7 @@ export default function ContactPage() {
 
               {/* Social Media Links */}
               <div className="card h-full">
-                <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
+                <h3 className="heading-3 mb-6">Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -133,6 +136,8 @@ export default function ContactPage() {
                       href={social.href}
                       className="p-3 bg-gray-100 hover:bg-primary hover:text-white rounded-lg transition-colors"
                       aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {social.icon}
                     </a>
@@ -142,12 +147,12 @@ export default function ContactPage() {
 
               {/* Location Info */}
               <div className="card h-full">
-                <h3 className="text-xl font-semibold mb-6">Our Location</h3>
+                <h3 className="heading-3 mb-6">Our Location</h3>
                 <div className="bg-gray-50 rounded-lg p-8 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <MapPin className="h-8 w-8 text-primary" />
+                    <MapPin className="icon-feature text-primary" />
                   </div>
-                  <h4 className="text-lg font-semibold text-text-primary mb-2">
+                  <h4 className="heading-4">
                     Headquarters
                   </h4>
                   <p className="text-text-secondary max-w-xs mx-auto">

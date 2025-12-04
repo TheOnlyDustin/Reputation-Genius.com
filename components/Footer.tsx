@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '#' },
-    { name: 'Careers', href: 'https://careers.reputation-genius.com' },
+    { name: 'Careers', href: 'https://www.facebook.com/reputationgenius' },
   ];
 
   const services = [
@@ -29,7 +29,7 @@ const Footer = () => {
   const legal = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms & Conditions', href: '/terms' },
-    { name: 'Cookie Policy', href: '/privacy' },
+    { name: 'Cookie Policy', href: '/cookie-policy' },
   ];
 
   return (
@@ -43,6 +43,7 @@ const Footer = () => {
               alt="Reputation Genius"
               width={200}
               height={60}
+              priority
               className="h-10 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
             />
           </Link>
@@ -149,16 +150,16 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-end gap-4">
               {/* Social Media Icons */}
               <div className="flex space-x-6">
-                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Facebook">
+                <a href="https://www.facebook.com/reputationgenius" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Follow us on Facebook">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Twitter">
+                <a href="https://www.facebook.com/reputationgenius" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Follow us on Twitter">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="LinkedIn">
+                <a href="https://www.facebook.com/reputationgenius" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Follow us on LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/reputationgenius" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Instagram">
+                <a href="https://www.facebook.com/reputationgenius" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-secondary transition-colors" aria-label="Follow us on Instagram">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>

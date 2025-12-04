@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                     <h2 className="text-xl font-semibold text-gray-800">{title || 'Webchat Demo'}</h2>
                     <button
                         onClick={onClose}
-                        className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                        className="p-3 hover:bg-gray-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                         aria-label="Close modal"
                     >
                         <X className="h-5 w-5 text-gray-500" />

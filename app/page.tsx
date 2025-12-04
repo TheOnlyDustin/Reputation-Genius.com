@@ -4,6 +4,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import {
   Star,
   MessageSquare,
@@ -18,8 +20,12 @@ import {
   DollarSign,
   X
 } from 'lucide-react';
+import { clsx } from 'clsx';
 
-import WebchatForm from '@/components/WebchatForm';
+const WebchatForm = dynamic(() => import('@/components/WebchatForm'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-full rounded" />,
+  ssr: false,
+});
 
 
 export default function Home() {
@@ -76,7 +82,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: '10K+', label: '5-Star Reviews Generated', icon: <Star className="h-5 w-5 text-yellow-400" /> },
+    { number: '17,400+', label: '5-Star Reviews Generated', icon: <Star className="h-5 w-5 text-yellow-400" /> },
     { number: '500+', label: 'Businesses Protected', icon: <Shield className="h-5 w-5 text-blue-400" /> },
     { number: '99%', label: 'Customer Retention', icon: <Users className="h-5 w-5 text-green-400" /> },
     { number: '24/7', label: 'Automated Monitoring', icon: <Globe className="h-5 w-5 text-purple-400" /> },
@@ -117,8 +123,8 @@ export default function Home() {
         'Text-to-Pay Invoicing',
         'Up to 3 Team Members'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f',
+      cta: 'Get Started',
+      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f?utm_source=website&utm_medium=cta&utm_campaign=homepage',
       highlight: false
     },
     {
@@ -132,11 +138,11 @@ export default function Home() {
         'Multi-Location Management',
         'Unlimited Team Members',
         'Advanced Analytics',
-        'Priority Support',
+        'Social Media Planner',
         'Custom Integrations'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996',
+      cta: 'Accelerate Growth',
+      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996?utm_source=website&utm_medium=cta&utm_campaign=homepage',
       highlight: true
     },
     {
@@ -152,8 +158,8 @@ export default function Home() {
         'White-label Solutions',
         'Dedicated Account Manager'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936',
+      cta: 'Hire Your AI Assistant',
+      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936?utm_source=website&utm_medium=cta&utm_campaign=homepage',
       highlight: false
     }
   ];
@@ -169,10 +175,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-primary font-medium text-sm mb-3 md:mb-6 border border-blue-100">
-                <Star className="h-4 w-4 mr-2 fill-current" />
+                <Star className="icon-button mr-2 fill-current" />
                 Trusted by 500+ Local Businesses
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-text-primary">
+              <h1 className="heading-hero">
                 Never Lose Another Customer to <span className="text-gradient">Bad Reviews</span>
               </h1>
               <p className="text-xl md:text-2xl mb-10 text-text-secondary leading-relaxed">
@@ -180,7 +186,47 @@ export default function Home() {
               </p>
               <div className="relative lg:hidden mb-8">
                 <div className="absolute -inset-3 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                <ErrorBoundary>
+                  <div className="relative w-full aspect-video rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
+                    >
+                      <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </ErrorBoundary>
+              </div>
+              <div className="flex flex-col gap-4 justify-center items-center lg:flex-row lg:justify-start">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+                >
+                  See AI in Action
+                  <MessageSquare className="ml-2 icon-button" />
+                </button>
+                <a
+                  href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=homepage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+                >
+                  Book a Call
+                  <Phone className="ml-2 icon-button" />
+                </a>
+                <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                  View Pricing
+                  <DollarSign className="ml-2 icon-button" />
+                </Link>
+
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <ErrorBoundary>
+                <div className="relative w-full aspect-video rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
                   <video
                     className="w-full h-full object-cover"
                     controls
@@ -190,43 +236,7 @@ export default function Home() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-              </div>
-              <div className="flex flex-col gap-4 justify-center items-center lg:flex-row lg:justify-start">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-                >
-                  See AI in Action
-                  <MessageSquare className="ml-2 h-4 w-4" />
-                </button>
-                <a
-                  href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-primary hover:bg-gray-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
-                >
-                  Book a Call
-                  <Phone className="ml-2 h-4 w-4" />
-                </a>
-                <Link href="/pricing" className="text-primary hover:bg-blue-50/50 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                  View Pricing
-                  <DollarSign className="ml-2 h-4 w-4" />
-                </Link>
-
-              </div>
-            </div>
-            <div className="relative hidden lg:block">
-              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-                <video
-                  className="w-full h-full object-cover"
-                  controls
-                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67d6d81a1b97ac0f5100b017.jpeg"
-                >
-                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/69046074c3f8ca9596ad61f1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              </ErrorBoundary>
             </div>
           </div>
         </div>
@@ -256,7 +266,7 @@ export default function Home() {
       {/* Features Section (Bento Grid) */}
       <section className="section-container bg-background-alt py-12 md:py-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Everything You Need to <span className="text-primary">Dominate</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -267,7 +277,10 @@ export default function Home() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-8 border border-border overflow-hidden flex flex-col items-center text-center md:block md:text-left ${feature.colSpan}`}
+              className={clsx(
+                'group relative bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-8 border border-border overflow-hidden flex flex-col items-center text-center md:block md:text-left',
+                feature.colSpan
+              )}
             >
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500`}></div>
               <div className={`inline-flex p-3 rounded-lg ${feature.color} mb-6 shadow-lg`}>
@@ -294,7 +307,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Three Steps to <span className="text-primary">Success</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -331,25 +344,25 @@ export default function Home() {
 
         <div className="relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Simple, Transparent Pricing
+            <h2 className="heading-1">
+              <span className="text-gradient">Simple, Transparent Pricing</span>
             </h2>
             <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Choose the plan that fits your growth stage. No hidden fees.
             </p>
-            <p className="text-center text-neutral-400 text-sm max-w-2xl mx-auto mt-4">
-              We offer a 14-day free trial, but a credit card is required to activate it. We had to implement this measure once AI became so prevalent to prevent spam and AI-generated accounts. We apologize for this necessary step and appreciate your understanding.
-            </p>
+
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto px-4">
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 transition-all duration-300 ${tier.highlight
-                  ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
-                  : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
-                  }`}
+                className={clsx(
+                  'relative rounded-2xl p-8 transition-all duration-300',
+                  tier.highlight
+                    ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
+                    : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
+                )}
               >
                 {tier.highlight && (
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg tracking-wide">
@@ -359,15 +372,15 @@ export default function Home() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className={`text-4xl font-bold ${tier.highlight ? 'text-primary' : 'text-white'}`}>{tier.price}</span>
-                    <span className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.period}</span>
+                    <span className={clsx('text-4xl font-bold', tier.highlight ? 'text-primary' : 'text-white')}>{tier.price}</span>
+                    <span className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.period}</span>
                   </div>
-                  <p className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.tagline}</p>
+                  <p className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.tagline}</p>
                 </div>
                 <ul className="space-y-4 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className={`h-5 w-5 mr-3 mt-0.5 flex-shrink-0 ${tier.highlight ? 'text-primary' : 'text-secondary'}`} />
+                      <CheckCircle className={clsx('icon-mini mr-3 mt-0.5 flex-shrink-0', tier.highlight ? 'text-primary' : 'text-secondary')} />
                       <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}
@@ -375,16 +388,18 @@ export default function Home() {
                 <div className="text-center">
                   <a
                     href={tier.link}
-                    className={`w-full block py-4 rounded-xl font-bold transition-all duration-300 ${tier.highlight
-                      ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
-                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
-                      }`}
+                    className={clsx(
+                      'w-full block py-4 rounded-xl font-bold transition-all duration-300',
+                      tier.highlight
+                        ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
+                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {tier.cta}
                   </a>
-                  <p className={`text-xs mt-3 ${tier.highlight ? 'text-text-secondary' : 'text-neutral-500'}`}>14-Day Free Trial Included</p>
+
                 </div>
               </div>
             ))}
@@ -396,7 +411,7 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-white">
         <div className="section-container !py-0">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-text-primary">
+            <h2 className="heading-2">
               Seamless Integrations
             </h2>
             <p className="text-lg text-text-secondary">
@@ -455,7 +470,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8">
+          <h2 className="heading-hero">
             Ready to Transform Your Reputation?
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto">
@@ -467,34 +482,30 @@ export default function Home() {
               className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
+              <MessageSquare className="ml-2 icon-button" />
             </button>
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=homepage"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               Book a Call
-              <Phone className="ml-2 h-4 w-4" />
+              <Phone className="ml-2 icon-button" />
             </a>
             <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
               View Pricing
-              <DollarSign className="ml-2 h-4 w-4" />
+              <DollarSign className="ml-2 icon-button" />
             </Link>
           </div>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-blue-100 font-medium">
             <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 mr-2" />
+              <CheckCircle className="icon-mini mr-2" />
               <span>No setup fees</span>
             </div>
             <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 mr-2" />
+              <CheckCircle className="icon-mini mr-2" />
               <span>Cancel anytime</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 mr-2" />
-              <span>14-day free trial</span>
             </div>
           </div>
         </div>
@@ -507,12 +518,12 @@ export default function Home() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-5xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-5xl sm:max-w-4xl h-[85vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200"
+              className="absolute top-4 right-4 z-50 p-3 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full shadow-md transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Close modal"
             >
               <X className="h-6 w-6" />

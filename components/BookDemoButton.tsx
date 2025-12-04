@@ -1,9 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Phone } from 'lucide-react';
-import Modal from '@/components/Modal';
-import WebchatForm from '@/components/WebchatForm';
+import dynamic from 'next/dynamic';
+
+const Modal = dynamic(() => import('@/components/Modal'), {
+    loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded" />,
+    ssr: false,
+});
+
+const WebchatForm = dynamic(() => import('@/components/WebchatForm'), {
+    loading: () => <div className="animate-pulse bg-gray-200 h-full rounded" />,
+    ssr: false,
+});
 
 interface BookDemoButtonProps {
     className?: string;
@@ -12,19 +21,27 @@ interface BookDemoButtonProps {
     onMobileClick?: () => void;
 }
 
-export default function BookDemoButton({
+const BookDemoButton = React.memo<BookDemoButtonProps>(function BookDemoButton({
     className = '',
     text = 'Book a Demo',
     icon,
     onMobileClick,
-}: BookDemoButtonProps) {
+}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = useCallback(() => {
+        setIsModalOpen(true);
+    }, []);
+
+    const closeModal = useCallback(() => {
+        setIsModalOpen(false);
+    }, []);
 
     return (
         <>
             {/* Desktop Button - Opens Modal */}
             <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={openModal}
                 className={`!hidden lg:!inline-flex items-center justify-center ${className}`}
             >
                 {text}
@@ -33,7 +50,7 @@ export default function BookDemoButton({
 
             {/* Mobile Button - Calls Phone */}
             <a
-                href="tel:4133142553"
+                href="tel:+14133142553"
                 className={`lg:!hidden !inline-flex items-center justify-center ${className}`}
                 onClick={onMobileClick}
             >
@@ -43,7 +60,7 @@ export default function BookDemoButton({
 
             <Modal
                 isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
+                onClose={closeModal}
                 title="Book a Demo"
             >
                 <div className="w-full h-[600px] md:h-[752px]">
@@ -52,4 +69,8 @@ export default function BookDemoButton({
             </Modal>
         </>
     );
-}
+});
+
+BookDemoButton.displayName = 'BookDemoButton';
+
+export default BookDemoButton;

@@ -2,8 +2,7 @@
 
 import { useState, Fragment } from 'react';
 import Link from 'next/link';
-import Modal from '@/components/Modal';
-import WebchatForm from '@/components/WebchatForm';
+import dynamic from 'next/dynamic';
 import {
   CheckCircle,
 
@@ -14,6 +13,17 @@ import {
   ChevronUp,
   DollarSign
 } from 'lucide-react';
+import { clsx } from 'clsx';
+
+const Modal = dynamic(() => import('@/components/Modal'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded" />,
+  ssr: false,
+});
+
+const WebchatForm = dynamic(() => import('@/components/WebchatForm'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-full rounded" />,
+  ssr: false,
+});
 
 export default function PricingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,8 +41,8 @@ export default function PricingPage() {
         'Text-to-Pay Invoicing',
         'Up to 3 Team Members'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f',
+      cta: 'Get Started',
+      link: 'https://link.reputation-genius.com/payment-link/692013bb802b2c68d169a48f?utm_source=website&utm_medium=cta&utm_campaign=pricing',
       highlight: false
     },
     {
@@ -46,11 +56,11 @@ export default function PricingPage() {
         'Multi-Location Management',
         'Unlimited Team Members',
         'Advanced Analytics',
-        'Priority Support',
+        'Social Media Planner',
         'Custom Integrations'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996',
+      cta: 'Accelerate Growth',
+      link: 'https://link.reputation-genius.com/payment-link/692013998b7f45678a9d8996?utm_source=website&utm_medium=cta&utm_campaign=pricing',
       highlight: true
     },
     {
@@ -66,8 +76,8 @@ export default function PricingPage() {
         'White-label Solutions',
         'Dedicated Account Manager'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936',
+      cta: 'Hire Your AI Assistant',
+      link: 'https://link.reputation-genius.com/payment-link/6920136b8b7f457b319d8936?utm_source=website&utm_medium=cta&utm_campaign=pricing',
       highlight: false
     }
   ];
@@ -77,10 +87,6 @@ export default function PricingPage() {
   ];
 
   const faqs = [
-    {
-      question: 'What is included in the free 14-day trial?',
-      answer: 'Our free trial gives you full access to all features of your chosen plan. You can connect your accounts, set up automations, and start managing your reputation immediately.'
-    },
     {
       question: 'Can I change my plan at any time?',
       answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will reflect on the next billing cycle.'
@@ -190,7 +196,7 @@ export default function PricingPage() {
       {/* Header Section */}
       <section className="bg-white section-container !pt-24 !pb-12">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h1 className="heading-1">
             Plans & Pricing
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
@@ -206,8 +212,8 @@ export default function PricingPage() {
 
         <div className="relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Simple, Transparent Pricing
+            <h2 className="heading-1">
+              <span className="text-gradient">Simple, Transparent Pricing</span>
             </h2>
             <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Choose the plan that fits your growth stage. No hidden fees.
@@ -218,10 +224,12 @@ export default function PricingPage() {
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 transition-all duration-300 ${tier.highlight
-                  ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
-                  : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
-                  }`}
+                className={clsx(
+                  'relative rounded-2xl p-8 transition-all duration-300',
+                  tier.highlight
+                    ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
+                    : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
+                )}
               >
                 {tier.highlight && (
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg tracking-wide">
@@ -231,15 +239,15 @@ export default function PricingPage() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className={`text-4xl font-bold ${tier.highlight ? 'text-primary' : 'text-white'}`}>{tier.price}</span>
-                    <span className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.period}</span>
+                    <span className={clsx('text-4xl font-bold', tier.highlight ? 'text-primary' : 'text-white')}>{tier.price}</span>
+                    <span className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.period}</span>
                   </div>
-                  <p className={`text-sm ${tier.highlight ? 'text-text-secondary' : 'text-neutral-400'}`}>{tier.tagline}</p>
+                  <p className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.tagline}</p>
                 </div>
                 <ul className="space-y-4 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className={`h-5 w-5 mr-3 mt-0.5 flex-shrink-0 ${tier.highlight ? 'text-primary' : 'text-secondary'}`} />
+                      <CheckCircle className={clsx('icon-small mr-3 mt-0.5 flex-shrink-0', tier.highlight ? 'text-primary' : 'text-secondary')} />
                       <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}
@@ -247,16 +255,18 @@ export default function PricingPage() {
                 <div className="text-center">
                   <a
                     href={tier.link}
-                    className={`w-full block py-4 rounded-xl font-bold transition-all duration-300 ${tier.highlight
-                      ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
-                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
-                      }`}
+                    className={clsx(
+                      'w-full block py-4 rounded-xl font-bold transition-all duration-300 min-h-[44px] flex items-center justify-center',
+                      tier.highlight
+                        ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
+                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {tier.cta}
                   </a>
-                  <p className={`text-xs mt-3 ${tier.highlight ? 'text-text-secondary' : 'text-neutral-500'}`}>14-Day Free Trial Included</p>
+
                 </div>
               </div>
             ))}
@@ -267,7 +277,7 @@ export default function PricingPage() {
       {/* Integration Showcase */}
       <section className="bg-white section-container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="heading-2">
             Easily Integrates With Leading Apps
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -286,53 +296,53 @@ export default function PricingPage() {
       {/* Comparison Table */}
       <section className="bg-background-alt section-container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="heading-2">
             Compare Plans
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             See exactly what's included in each plan
           </p>
         </div>
-        <div className="w-full">
+        <div className="w-full overflow-x-auto">
           <table className="w-full bg-white rounded-lg shadow-md table-fixed">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left p-2 md:p-6 font-semibold text-xs md:text-base w-[34%] md:w-auto">Features</th>
-                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Essentials</th>
-                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Professional</th>
-                <th className="text-center p-1 md:p-6 font-semibold text-xs md:text-base w-[22%] md:w-auto">Platinum</th>
+                <th className="text-left p-1 md:p-6 font-semibold text-[10px] sm:text-xs md:text-base w-[34%] md:w-auto">Features</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-[10px] sm:text-xs md:text-base w-[22%] md:w-auto">Essentials</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-[10px] sm:text-xs md:text-base w-[22%] md:w-auto">Professional</th>
+                <th className="text-center p-1 md:p-6 font-semibold text-[10px] sm:text-xs md:text-base w-[22%] md:w-auto">Platinum</th>
               </tr>
             </thead>
             <tbody>
               {comparisonFeatures.map((category) => (
                 <Fragment key={category.category}>
                   <tr className="border-b border-border bg-gray-50">
-                    <td colSpan={4} className="p-2 md:p-4 font-semibold text-text-primary text-xs md:text-base">
+                    <td colSpan={4} className="p-1 md:p-4 font-semibold text-text-primary text-[10px] sm:text-xs md:text-base">
                       {category.category}
                     </td>
                   </tr>
                   {category.features.map((feature, featureIndex) => (
                     <tr key={featureIndex} className="border-b border-border">
-                      <td className="p-2 md:p-6 text-xs md:text-sm">{feature.name}</td>
-                      <td className="p-1 md:p-6 text-center">
+                      <td className="p-1 md:p-6 text-[10px] sm:text-xs md:text-sm">{feature.name}</td>
+                      <td className="p-0.5 md:p-6 text-center">
                         {typeof feature.essentials === 'boolean' ? (
-                          feature.essentials ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
+                          feature.essentials ? <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-green-500 mx-auto" /> : <span className="text-gray-400 text-[10px] md:text-base">—</span>
                         ) : (
-                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.essentials}</span>
+                          <span className="text-[9px] sm:text-[10px] md:text-sm font-medium block leading-tight">{feature.essentials}</span>
                         )}
                       </td>
-                      <td className="p-1 md:p-6 text-center">
+                      <td className="p-0.5 md:p-6 text-center">
                         {typeof feature.professional === 'boolean' ? (
-                          feature.professional ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
+                          feature.professional ? <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-green-500 mx-auto" /> : <span className="text-gray-400 text-[10px] md:text-base">—</span>
                         ) : (
-                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.professional}</span>
+                          <span className="text-[9px] sm:text-[10px] md:text-sm font-medium block leading-tight">{feature.professional}</span>
                         )}
                       </td>
-                      <td className="p-1 md:p-6 text-center">
+                      <td className="p-0.5 md:p-6 text-center">
                         {typeof feature.platinum === 'boolean' ? (
-                          feature.platinum ? <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" /> : <span className="text-gray-400 text-xs md:text-base">—</span>
+                          feature.platinum ? <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-green-500 mx-auto" /> : <span className="text-gray-400 text-[10px] md:text-base">—</span>
                         ) : (
-                          <span className="text-[10px] md:text-sm font-medium block leading-tight">{feature.platinum}</span>
+                          <span className="text-[9px] sm:text-[10px] md:text-sm font-medium block leading-tight">{feature.platinum}</span>
                         )}
                       </td>
                     </tr>
@@ -347,7 +357,7 @@ export default function PricingPage() {
       {/* FAQ Section */}
       <section className="bg-white section-container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="heading-2">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -365,9 +375,9 @@ export default function PricingPage() {
                   {faq.question}
                 </h3>
                 {openFaq === index ? (
-                  <ChevronUp className="h-5 w-5 text-text-secondary" />
+                  <ChevronUp className="icon-small text-text-secondary" />
                 ) : (
-                  <ChevronDown className="h-5 w-5 text-text-secondary" />
+                  <ChevronDown className="icon-small text-text-secondary" />
                 )}
               </button>
               {openFaq === index && (
@@ -387,7 +397,7 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
@@ -396,23 +406,23 @@ export default function PricingPage() {
           <div className="flex flex-col gap-6 lg:gap-3 justify-center items-center lg:flex-row">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+              className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap min-h-[44px]"
             >
               See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
+              <MessageSquare className="ml-2 icon-button" />
             </button>
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=pricing"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap min-h-[44px]"
             >
               Book a Call
-              <Phone className="ml-2 h-4 w-4" />
+              <Phone className="ml-2 icon-button" />
             </a>
-            <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+            <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 min-h-[44px]">
               View Pricing
-              <DollarSign className="ml-2 h-4 w-4" />
+              <DollarSign className="ml-2 icon-button" />
             </Link>
           </div>
         </div>

@@ -11,7 +11,8 @@ import {
 
   Calculator,
   Users,
-  BarChart3
+  BarChart3,
+  CheckCircle
 } from 'lucide-react';
 
 export default function AIMarketingPage() {
@@ -138,10 +139,10 @@ export default function AIMarketingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Crown className="h-4 w-4 mr-2" />
+                <Crown className="icon-button mr-2" />
                 Platinum Exclusive Feature
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-text-primary">
+              <h1 className="heading-hero">
                 AI-Powered Marketing Automation
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto lg:mx-0">
@@ -150,7 +151,7 @@ export default function AIMarketingPage() {
             </div>
             <div className="relative block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+              <div className="relative w-full aspect-video rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
                 <video
                   className="w-full h-full object-cover"
                   controls
@@ -169,7 +170,7 @@ export default function AIMarketingPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Enterprise-Level AI Marketing
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -196,7 +197,7 @@ export default function AIMarketingPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Calculate Your ROI
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -211,7 +212,7 @@ export default function AIMarketingPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Proven Results & Benefits
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -240,7 +241,7 @@ export default function AIMarketingPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Exclusive to Platinum Tier
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
@@ -260,7 +261,7 @@ export default function AIMarketingPage() {
                 <p className="text-xs text-gray-500 mt-1">Not Available</p>
               </div>
               <div className="text-center">
-                <Crown className="h-12 w-12 text-yellow-500 mx-auto mb-2" />
+                <CheckCircle className="icon-small text-green-500 mr-4 flex-shrink-0" />
                 <p className="font-semibold text-primary">Platinum</p>
                 <p className="text-sm text-text-secondary">$497/month</p>
                 <p className="text-xs text-primary font-medium mt-1">✓ AI Marketing Included</p>
@@ -276,21 +277,21 @@ export default function AIMarketingPage() {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
           <Crown className="h-16 w-16 mx-auto mb-6 text-yellow-300" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Ready to Unlock AI-Powered Growth?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
             Join the elite businesses using AI marketing automation to dominate their markets.
           </p>
           <Link
-            href="https://link.reputation-genius.com/payment-link/6870559fddc6a62dcac5294d"
+            href="https://link.reputation-genius.com/payment-link/6870559fddc6a62dcac5294d?utm_source=website&utm_medium=cta&utm_campaign=ai-marketing"
             className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center text-lg"
           >
             Upgrade to Platinum
             <ArrowRight className="ml-2 h-6 w-6" />
           </Link>
           <p className="text-sm mt-4 text-blue-200">
-            Includes 14-day free trial • Cancel anytime
+            Cancel anytime
           </p>
         </div>
       </section>

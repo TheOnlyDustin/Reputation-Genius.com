@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 import {
   MessageSquare,
@@ -12,8 +14,16 @@ import {
 
   Globe
 } from 'lucide-react';
-import Modal from '@/components/Modal';
-import WebchatForm from '@/components/WebchatForm';
+
+const Modal = dynamic(() => import('@/components/Modal'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded" />,
+  ssr: false,
+});
+
+const WebchatForm = dynamic(() => import('@/components/WebchatForm'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-full rounded" />,
+  ssr: false,
+});
 
 export default function WebchatPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,7 +68,7 @@ export default function WebchatPage() {
         <div className="section-container relative z-10 !py-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-text-primary">
+              <h1 className="heading-hero">
                 Webchat That <span className="text-gradient">Converts</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-text-secondary leading-relaxed">
@@ -70,7 +80,7 @@ export default function WebchatPage() {
                   className="bg-primary text-white hover:bg-primary-dark font-bold px-8 py-4 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center"
                 >
                   Try the AI Agent Now
-                  <MessageSquare className="ml-2 h-5 w-5" />
+                  <MessageSquare className="ml-2 icon-button" />
                 </button>
                 <Modal
                   isOpen={isModalOpen}
@@ -85,16 +95,18 @@ export default function WebchatPage() {
             </div>
             <div className="relative hidden lg:block">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-full h-auto rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-                <video
-                  className="w-full h-full object-cover"
-                  controls
-                  poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67755c99119936bc92c72176.webp"
-                >
-                  <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              <ErrorBoundary>
+                <div className="relative w-full aspect-video rounded-2xl shadow-2xl border border-white/50 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67755c99119936bc92c72176.webp"
+                  >
+                    <source src="https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/690460b77bdc53997da4e084.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ErrorBoundary>
             </div>
           </div>
         </div>
@@ -104,7 +116,7 @@ export default function WebchatPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Conversion-Focused Webchat
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -133,7 +145,7 @@ export default function WebchatPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Why Webchat Drives Conversions
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -160,7 +172,7 @@ export default function WebchatPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="heading-1">
               Available In All Plans
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
@@ -192,14 +204,11 @@ export default function WebchatPage() {
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <h2 className="heading-1">
             Ready to Convert More Visitors?
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Start your free trial of our Professional plan and see how webchat can transform your website conversions.
-          </p>
           <a
-            href="https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b"
+            href="https://link.reputation-genius.com/payment-link/6870552eddc6a60a71c5294b?utm_source=website&utm_medium=cta&utm_campaign=webchat"
             className="bg-white text-primary hover:bg-blue-50 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-flex items-center"
             target="_blank"
             rel="noopener noreferrer"

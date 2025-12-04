@@ -6,15 +6,15 @@ export default function PrivacyPage() {
       {/* Header Section */}
       <section className="bg-white section-container !pt-24 !pb-12">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h1 className="heading-1">
             Privacy Policy
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
             How we collect, use, and protect your personal information
           </p>
           <div className="mt-8 text-text-secondary">
-            <p><strong>Effective Date:</strong> November 11, 2025</p>
-            <p><strong>Last Updated:</strong> November 11, 2025</p>
+            <p><strong>Effective Date:</strong> December 1, 2025</p>
+            <p><strong>Last Updated:</strong> December 1, 2025</p>
           </div>
         </div>
       </section>
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       {/* Privacy Policy Content */}
       <section className="bg-background-alt section-container">
         <div className="max-w-4xl mx-auto prose prose-lg max-w-none text-text-secondary">
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Introduction</h2>
+          <h2 className="heading-2">Introduction</h2>
           <p className="mb-6">
             Reputation Genius, LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at reputation-genius.com or use our SaaS platform for review management, messaging, CRM, and related services.
           </p>
@@ -30,8 +30,8 @@ export default function PrivacyPage() {
             By using our services, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">What Information We Collect</h2>
-          <h3 className="text-2xl font-semibold mb-4 text-text-primary">Personal Data</h3>
+          <h2 className="heading-2">What Information We Collect</h2>
+          <h3 className="heading-3">Personal Data</h3>
           <p className="mb-4">We may collect the following personal information:</p>
           <ul className="list-disc pl-6 mb-6">
             <li>Name, email address, phone number, and business information when you register for an account</li>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
             <li>Lead and contact information imported or created in our CRM system</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4 text-text-primary">Usage Data</h3>
+          <h3 className="heading-3">Usage Data</h3>
           <p className="mb-4">We automatically collect certain information when you use our services:</p>
           <ul className="list-disc pl-6 mb-6">
             <li>IP address, browser type, operating system, and device information</li>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
             <li>Log data for security and troubleshooting purposes</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4 text-text-primary">Cookies and Tracking Technologies</h3>
+          <h3 className="heading-3">Cookies and Tracking Technologies</h3>
           <p className="mb-4">We use cookies and similar technologies to enhance your experience. Specifically, we utilize the following tools:</p>
           <ul className="list-disc pl-6 mb-6">
             <li><strong>Google Tag Manager & Analytics:</strong> To understand website traffic and user behavior.</li>
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             You can control cookie preferences through your browser settings, though disabling certain cookies may affect platform functionality.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">How We Use Your Information</h2>
+          <h2 className="heading-2">How We Use Your Information</h2>
           <p className="mb-4">We use collected information for the following purposes:</p>
           <ul className="list-disc pl-6 mb-6">
             <li>Provide, maintain, and improve our review management, messaging, CRM, and AI marketing services</li>
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
             <strong>Important:</strong> We don't sell, share, or do anything with the data other than review it for breaks in our site, and seeing how we can improve the user experience.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Information Sharing and Disclosure</h2>
+          <h2 className="heading-2">Information Sharing and Disclosure</h2>
           <p className="mb-4">We may share your information in the following circumstances:</p>
           <ul className="list-disc pl-6 mb-6">
             <li><strong>Third-Party Integrations:</strong> With services like GoHighLevel, Google, Facebook, QuickBooks, Clio, and Zapier as necessary for platform functionality</li>
@@ -90,12 +90,12 @@ export default function PrivacyPage() {
             We do not sell your personal information to third parties for marketing purposes.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Data Retention</h2>
+          <h2 className="heading-2">Data Retention</h2>
           <p className="mb-6">
             The data expires and is removed in accordance with our third-party providers (Google, Facebook, Microsoft). We do not adjust the duration of time the data is retained from the default setting to ensure compliancy.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Data Security</h2>
+          <h2 className="heading-2">Data Security</h2>
           <p className="mb-6">
             We implement industry-standard security measures to protect your information, including:
           </p>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
             While we strive to protect your information, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Your Privacy Rights</h2>
+          <h2 className="heading-2">Your Privacy Rights</h2>
           <p className="mb-4">Depending on your location, you may have the following rights regarding your personal information:</p>
           <ul className="list-disc pl-6 mb-6">
             <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
@@ -121,12 +121,12 @@ export default function PrivacyPage() {
             <li><strong>Restriction:</strong> Request limitation of how we process your information</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4 text-text-primary">GDPR Rights (EU Residents)</h3>
+          <h3 className="heading-3">GDPR Rights (EU Residents)</h3>
           <p className="mb-6">
             If you are located in the European Union, you have additional rights under the General Data Protection Regulation (GDPR), including the right to lodge a complaint with your local data protection authority.
           </p>
 
-          <h3 className="text-2xl font-semibold mb-4 text-text-primary">CCPA Rights (California Residents)</h3>
+          <h3 className="heading-3">CCPA Rights (California Residents)</h3>
           <p className="mb-6">
             California residents have rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect and the right to request deletion of your information.
           </p>
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
             To exercise any of these rights, please contact us using the information provided below. We will respond to your request within 30 days.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Third-Party Services</h2>
+          <h2 className="heading-2">Third-Party Services</h2>
           <p className="mb-4">Our platform integrates with various third-party services:</p>
           <ul className="list-disc pl-6 mb-6">
             <li><strong>GoHighLevel:</strong> CRM and marketing automation platform</li>
@@ -148,17 +148,17 @@ export default function PrivacyPage() {
             These third parties have their own privacy policies, and we encourage you to review them. We only share necessary information for service functionality.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Children's Privacy</h2>
+          <h2 className="heading-2">Children's Privacy</h2>
           <p className="mb-6">
             Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information promptly.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Changes to Privacy Policy</h2>
+          <h2 className="heading-2">Changes to Privacy Policy</h2>
           <p className="mb-6">
             We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We will also send you an email notification for material changes. Your continued use of our services after any changes constitutes acceptance of the updated policy.
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 text-text-primary">Contact Us</h2>
+          <h2 className="heading-2">Contact Us</h2>
           <p className="mb-4">
             If you have any questions about this Privacy Policy or our data practices, please contact us:
           </p>

@@ -1,13 +1,30 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { dropdownVariants, mobileMenuVariants, servicesButtonVariants, chevronVariants } from './nav-variants';
 
-const Navigation = () => {
+const Navigation = React.memo(() => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev);
+  }, []);
+
+  const toggleServices = useCallback(() => {
+    setServicesOpen(prev => !prev);
+  }, []);
+
+  const handleServicesMouseEnter = useCallback(() => {
+    setServicesOpen(true);
+  }, []);
+
+  const handleServicesMouseLeave = useCallback(() => {
+    setServicesOpen(false);
+  }, []);
 
   const services = [
     { name: 'Review Management', href: '/services/review-management' },
@@ -30,6 +47,7 @@ const Navigation = () => {
               alt="Reputation Genius"
               width={180}
               height={50}
+              priority
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
@@ -46,20 +64,15 @@ const Navigation = () => {
             {/* Services Dropdown */}
             <div
               className="relative group"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
-              <button
-                className="flex items-center text-text-secondary hover:text-primary font-medium transition-colors py-2"
-              >
+              <button className={servicesButtonVariants()}>
                 Services
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={chevronVariants({ rotated: servicesOpen })} />
               </button>
 
-              <div
-                className={`absolute left-0 top-full w-72 bg-white rounded-xl shadow-xl border border-border py-3 transition-all duration-200 origin-top-left ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-                  }`}
-              >
+              <div className={dropdownVariants({ state: servicesOpen ? 'open' : 'closed' })}>
                 {services.map((item) => (
                   <Link
                     key={item.name}
@@ -107,7 +120,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             className="lg:hidden p-2 text-text-primary hover:text-primary transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -118,7 +131,7 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={mobileMenuVariants({ state: mobileMenuOpen ? 'open' : 'closed' })}>
           <div className="py-4 border-t border-border space-y-4">
             <Link
               href="/"
@@ -130,14 +143,11 @@ const Navigation = () => {
 
             <div>
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
+                onClick={toggleServices}
                 className="flex items-center justify-between w-full text-text-secondary font-medium py-2 hover:text-primary transition-colors"
               >
                 Services
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''
-                    }`}
-                />
+                <ChevronDown className={chevronVariants({ rotated: servicesOpen })} />
               </button>
               <div className={`pl-4 space-y-2 mt-2 overflow-hidden transition-all duration-300 ${servicesOpen ? 'max-h-96' : 'max-h-0'}`}>
                 {services.map((item) => (
@@ -191,6 +201,8 @@ const Navigation = () => {
       </div>
     </nav>
   );
-};
+});
+
+Navigation.displayName = 'Navigation';
 
 export default Navigation;

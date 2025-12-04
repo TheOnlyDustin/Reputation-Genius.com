@@ -28,7 +28,7 @@ export default function DemoPage() {
       <section className="bg-white">
         <div className="section-container py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-text-primary">
+            <h1 className="heading-1">
               See Reputation Genius In Action
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-text-secondary">
@@ -55,7 +55,7 @@ export default function DemoPage() {
             <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-primary">
               <div className="text-center mb-6">
                 <Bot className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h2 className="text-2xl font-bold mb-2">AI Demo Call Line</h2>
+                <h2 className="heading-2 !text-2xl mb-2">AI Demo Call Line</h2>
                 <p className="text-text-secondary mb-4">Experience our AI voice capabilities instantly.</p>
                 <div className="flex items-center justify-center text-sm text-green-600 mb-6">
                   <Clock className="h-4 w-4 mr-2" />
@@ -84,7 +84,7 @@ export default function DemoPage() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-border">
-              <h2 className="text-3xl font-bold mb-6">Ready to Schedule?</h2>
+              <h2 className="heading-2">Ready to Schedule?</h2>
               <p className="text-xl text-text-secondary mb-8">
                 Book a time directly on our calendar to speak with a reputation specialist.
               </p>

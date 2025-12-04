@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Modal from '@/components/Modal';
-import WebchatForm from '@/components/WebchatForm';
+import dynamic from 'next/dynamic';
 
 import {
   Target,
@@ -23,25 +22,35 @@ import {
   DollarSign
 } from 'lucide-react';
 
+const Modal = dynamic(() => import('@/components/Modal'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded" />,
+  ssr: false,
+});
+
+const WebchatForm = dynamic(() => import('@/components/WebchatForm'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-full rounded" />,
+  ssr: false,
+});
+
 export default function AboutPage() {
   const valueProps = [
     {
-      icon: <Target className="h-8 w-8 text-primary" />,
+      icon: <Target className="icon-feature text-accent" />,
       title: "Automated Review Management",
       description: "Never miss a review opportunity with our intelligent automation that captures and responds to reviews across all platforms."
     },
     {
-      icon: <MessageSquare className="h-8 w-8 text-primary" />,
+      icon: <MessageSquare className="icon-feature text-accent" />,
       title: "Unified Communication",
       description: "Streamline all customer interactions into one powerful inbox, from Facebook Messenger to email and SMS."
     },
     {
-      icon: <Zap className="h-8 w-8 text-primary" />,
+      icon: <Zap className="icon-feature text-accent" />,
       title: "AI-Powered Automation",
       description: "Leverage cutting-edge AI to automate follow-ups, nurture leads, and grow your business while you focus on what matters."
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-primary" />,
+      icon: <TrendingUp className="icon-feature text-accent" />,
       title: "Proven Results",
       description: "Join thousands of businesses that have transformed their online reputation and grown their revenue with Reputation Genius."
     }
@@ -49,22 +58,22 @@ export default function AboutPage() {
 
   const whyChooseUs = [
     {
-      icon: <CheckCircle className="h-6 w-6 text-green-500" />,
+      icon: <CheckCircle className="icon-small text-green-500" />,
       title: "Easy to Use",
       description: "Intuitive dashboard designed for busy business owners, not tech experts."
     },
     {
-      icon: <Shield className="h-6 w-6 text-green-500" />,
+      icon: <Shield className="icon-small text-green-500" />,
       title: "Enterprise Security",
       description: "Bank-level security with SOC 2 compliance and GDPR-ready data protection."
     },
     {
-      icon: <Clock className="h-6 w-6 text-green-500" />,
+      icon: <Clock className="icon-small text-green-500" />,
       title: "24/7 Support",
       description: "Round-the-clock customer support from real humans who understand your business."
     },
     {
-      icon: <Globe className="h-6 w-6 text-green-500" />,
+      icon: <Globe className="icon-small text-green-500" />,
       title: "Multi-Platform Integration",
       description: "Works seamlessly with Google, Facebook, QuickBooks, Clio, and 50+ other business tools."
     }
@@ -76,7 +85,7 @@ export default function AboutPage() {
       name: "Dustin Giordani",
       role: "Co-Founder, Automation & Systems Architect",
       bio: "Dustin is a systems architect with a bias for outcomes. His first taste of automation was building a scheduling platform for his employer, a landscaping company, that cut manager time by 80%—a win so effective it automated away his own role. He then joined StubHub and eBay, where he designed cybercrime-prevention workflows and led complex investigations. At CodeCraftersAI, he combines experience, automation, and AI to turn business bottlenecks into durable advantages.",
-      image: "https://storage.googleapis.com/msgsndr/YEHG1xosTWTflJmGLTc0/media/68c8f84ef21b31229ea533f4.jpeg",
+      image: "https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/67a8e4b69769a742b9615580.png",
       button: {
         text: "Book an Appointment",
         href: "/contact"
@@ -86,13 +95,13 @@ export default function AboutPage() {
       name: "Shane Bellefeuille",
       role: "Team Member",
       bio: "Passionate about leveraging technology to solve real-world business problems.",
-      image: "/api/placeholder/150/150"
+      image: "https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/692fe1410b0f9d2a38502b4a.png"
     },
     {
       name: "Jessica",
       role: "AI Phone and SMS Agent / Receptionist",
       bio: "Jessica is Reputation Genius's AI-powered phone and SMS agent, designed to handle inquiries, qualify leads, and provide support 24/7. She understands natural conversation and guides customers through processes like booking appointments with remarkable accuracy. She never sleeps, ensuring no message goes unanswered. As the heart of our AI platform, Jessica demonstrates how intelligent automation transforms customer service, turning every interaction into an opportunity to impress and convert.",
-      image: "/api/placeholder/150/150",
+      image: "https://storage.googleapis.com/msgsndr/Aq4SPW5yrSyHopkShcOW/media/692fe3680b0f9dd8ba507204.png",
       phone: "tel:+14133142553"
     }
   ];
@@ -113,22 +122,22 @@ export default function AboutPage() {
     {
       number: "121",
       label: "Businesses served",
-      icon: <Users className="h-8 w-8 text-primary" />
+      icon: <Users className="icon-feature text-accent" />
     },
     {
-      number: "63,500",
+      number: "17,400",
       label: "reviews managed",
-      icon: <Star className="h-8 w-8 text-primary" />
+      icon: <Star className="icon-feature text-accent" />
     },
     {
       number: "99.9%",
       label: "Uptime Guarantee",
-      icon: <TrendingUp className="h-8 w-8 text-primary" />
+      icon: <TrendingUp className="icon-feature text-accent" />
     },
     {
       number: "24/7",
       label: "Customer Support",
-      icon: <Heart className="h-8 w-8 text-primary" />
+      icon: <Heart className="icon-feature text-accent" />
     }
   ];
 
@@ -145,7 +154,7 @@ export default function AboutPage() {
       {/* Header Section */}
       <section className="bg-white !pt-24 !pb-12">
         <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h1 className="heading-1">
             About Reputation Genius
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
@@ -158,7 +167,7 @@ export default function AboutPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-primary">
+            <h2 className="heading-2 mb-8">
               Our Mission
             </h2>
             <p className="text-xl md:text-2xl text-text-secondary leading-relaxed">
@@ -175,7 +184,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-text-primary">
+            <h2 className="heading-2 mb-8 text-center">
               Our Story
             </h2>
             <div className="prose prose-lg max-w-none text-text-secondary">
@@ -197,7 +206,7 @@ export default function AboutPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+            <h2 className="heading-2 mb-4">
               Why Businesses Choose Reputation Genius
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -210,7 +219,7 @@ export default function AboutPage() {
                 <div className="flex justify-center mb-4">
                   {prop.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-text-primary">
+                <h3 className="heading-3">
                   {prop.title}
                 </h3>
                 <p className="text-text-secondary">
@@ -226,7 +235,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+            <h2 className="heading-2 mb-4">
               Why Choose Us
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -240,7 +249,7 @@ export default function AboutPage() {
                   {reason.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-text-primary">
+                  <h3 className="heading-4">
                     {reason.title}
                   </h3>
                   <p className="text-text-secondary">
@@ -257,7 +266,7 @@ export default function AboutPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+            <h2 className="heading-2 mb-4">
               Meet Our Team
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -271,10 +280,10 @@ export default function AboutPage() {
                   {member.image.startsWith('http') ? (
                     <Image src={member.image} alt={member.name} width={96} height={96} className="w-full h-full object-cover" />
                   ) : (
-                    <Users className="h-12 w-12 text-gray-400" />
+                    <Users className="icon-large text-gray-400" />
                   )}
                 </div>
-                <h3 className="text-lg font-bold mb-1 text-text-primary">
+                <h3 className="heading-4 mb-1">
                   {member.name}
                 </h3>
                 <p className="text-primary font-medium mb-3">
@@ -318,7 +327,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+            <h2 className="heading-2 mb-4">
               Our Impact
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -347,7 +356,7 @@ export default function AboutPage() {
       <section className="bg-background-alt">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+            <h2 className="heading-2 mb-4">
               Trusted & Certified
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -358,7 +367,7 @@ export default function AboutPage() {
             {certifications.map((cert, index) => (
               <div key={index} className="bg-white px-6 py-3 rounded-lg shadow-md border border-border">
                 <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-primary" />
+                  <Award className="icon-check text-primary" />
                   <span className="font-medium text-text-primary">{cert}</span>
                 </div>
               </div>
@@ -372,7 +381,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-primary-gradient opacity-95"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="section-container relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <h2 className="heading-2">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
@@ -384,20 +393,20 @@ export default function AboutPage() {
               className="bg-white text-primary hover:bg-blue-50 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               See AI in Action
-              <MessageSquare className="ml-2 h-4 w-4" />
+              <MessageSquare className="ml-2 icon-button" />
             </button>
             <a
-              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents"
+              href="https://link.reputation-genius.com/widget/bookings/discovery-call-ai-agents?utm_source=website&utm_medium=cta&utm_campaign=about"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center whitespace-nowrap"
             >
               Book a Call
-              <Phone className="ml-2 h-4 w-4" />
+              <Phone className="ml-2 icon-button" />
             </a>
             <Link href="/pricing" className="bg-[#0f52ba] text-blue-100 hover:text-white hover:bg-[#0f52ba]/90 font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 flex items-center justify-center whitespace-nowrap border border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5">
               View Pricing
-              <DollarSign className="ml-2 h-4 w-4" />
+              <DollarSign className="ml-2 icon-button" />
             </Link>
           </div>
         </div>
