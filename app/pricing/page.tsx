@@ -33,6 +33,7 @@ export default function PricingPage() {
       price: '$97',
       period: '/month',
       tagline: 'For emerging businesses',
+      badge: 'GETTING STARTED',
       features: [
         'Automated Review Collection',
         'Unified Messaging Inbox',
@@ -68,6 +69,7 @@ export default function PricingPage() {
       price: '$497',
       period: '/month',
       tagline: 'For scaling businesses',
+      badge: 'BEST VALUE',
       features: [
         'All Professional features',
         'AI Marketing Automation',
@@ -224,30 +226,28 @@ export default function PricingPage() {
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
-                className={clsx(
-                  'relative rounded-2xl p-8 transition-all duration-300',
-                  tier.highlight
-                    ? 'bg-white text-text-primary shadow-2xl scale-105 border-2 border-primary'
-                    : 'bg-neutral-800/50 text-white border border-neutral-700 hover:bg-neutral-800'
-                )}
+                className="group relative rounded-2xl p-8 transition-all duration-300 border-2 border-transparent hover:border-primary bg-neutral-800/50 text-neutral-300 hover:bg-neutral-800 hover:shadow-glow hover:scale-105 border-white/5"
               >
-                {tier.highlight && (
-                  <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg tracking-wide">
+                {tier.badge && (
+                  <div className={clsx(
+                    "absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg tracking-wide z-10 uppercase whitespace-nowrap transition-all duration-300",
+                    tier.highlight ? "opacity-100" : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+                  )}>
                     {tier.badge}
                   </div>
                 )}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-primary">{tier.name}</h3>
                   <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className={clsx('text-4xl font-bold', tier.highlight ? 'text-primary' : 'text-white')}>{tier.price}</span>
-                    <span className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.period}</span>
+                    <span className="text-4xl font-bold text-white group-hover:text-primary transition-colors duration-300">{tier.price}</span>
+                    <span className="text-sm text-neutral-400 group-hover:text-text-secondary transition-colors duration-300">{tier.period}</span>
                   </div>
-                  <p className={clsx('text-sm', tier.highlight ? 'text-text-secondary' : 'text-neutral-400')}>{tier.tagline}</p>
+                  <p className="text-sm text-neutral-400 group-hover:text-text-secondary transition-colors duration-300">{tier.tagline}</p>
                 </div>
                 <ul className="space-y-4 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className={clsx('icon-small mr-3 mt-0.5 flex-shrink-0', tier.highlight ? 'text-primary' : 'text-secondary')} />
+                      <CheckCircle className="icon-small mr-3 mt-0.5 flex-shrink-0 text-secondary group-hover:text-primary group-hover:drop-shadow-[0_0_6px_rgba(15,82,186,0.8)] transition-all duration-300" />
                       <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}
@@ -255,18 +255,12 @@ export default function PricingPage() {
                 <div className="text-center">
                   <a
                     href={tier.link}
-                    className={clsx(
-                      'w-full block py-4 rounded-xl font-bold transition-all duration-300 min-h-[44px] flex items-center justify-center',
-                      tier.highlight
-                        ? 'bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl'
-                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
-                    )}
+                    className="w-full block py-4 rounded-xl font-bold transition-all duration-300 min-h-[44px] flex items-center justify-center bg-white/10 text-white border border-white/10 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:border-transparent hover:!bg-primary-dark hover:!shadow-xl"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {tier.cta}
                   </a>
-
                 </div>
               </div>
             ))}
